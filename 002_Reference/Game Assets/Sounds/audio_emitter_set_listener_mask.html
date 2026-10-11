@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>audio_emitter_set_listener_mask</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">audio_emitter_set_listener_mask</h1>
+
+<h2 class="studio">Sets the bit mask for a given emitter, defining the listeners to play it to.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">audio_emitter_set_listener_mask(emitterID, mask);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+
+		<tr><td>emitterID</td>
+		<td>The unique ID of the emitter to set the mask of</td></tr>
+		
+		<tr class="alt"><td>mask</td>
+		<td>The bitmask data to set for the sound</td></tr>
+		
+	</table>
+</div>
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function can be used to set the the bit-mask for an emitter so that all sounds played through the emitter will play only from those listeners specified. You can create a bit-mask by using the 
+<a href="audio_get_listener_info.html"><tt>audio_get_listener_info()</tt></a> and then using the bitwise <tt>or</tt> ("|") to create a custom mask with those listeners that you require the sound to play 
+from, and then apply this custom mask to the emitter. This mask will over-ride the default mask or that which you may have set using the function <a href="audio_set_listener_mask.html">
+<tt>audio_set_listener_mask()</tt></a>.
+<br>
+<br>
+
+<p>
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+s_emit = audio_emitter_create();<br>
+audio_emitter_set_listener_mask(snd, global.PlayerMask);<br>
+</p>
+<p>
+The above code creates an audio emitter and then sets the listener(s) to play from using the mask data stored in a global variable.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="Audio%20Listeners.html">Audio Listeners</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="audio_get_listener_mask.html">audio_get_listener_mask</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+audio_sound_set_listener_mask
+-->
+

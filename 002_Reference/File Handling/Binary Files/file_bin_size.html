@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>file_bin_size</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">file_bin_size</h1>
+  
+<h2 class="studio">Returns the size (in bytes) of the file with the given file id.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">file_bin_size(binfile);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+		
+		<tr><td>binfile</td>
+		<td>The ID of the file to get the size of.</td></tr>
+
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>Real
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function will return the size (in bytes) of a file that has been opened for reading and/or writing. The File ID is the value returned by the function <a href="file_bin_open.html"><tt>file_bin_open()</tt></a>.
+<blockquote>
+	<i><b>NOTE: </b>These functions <b>do not</b> work when the target module is HTML5</i>.
+</blockquote>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+file = file_bin_open('myfile.bin', 2);<br>
+size = file_bin_size(file);<br>
+file_bin_close(file);<br>
+</p>
+<p>
+This would open a file from the local directory of the game, and assign its index to the variable "file". It would then get the size of that file and close it again.
+<p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Binary Files</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="file_bin_position.html">file_bin_position</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!--KEYWORDS
+file_bin_size
+-->

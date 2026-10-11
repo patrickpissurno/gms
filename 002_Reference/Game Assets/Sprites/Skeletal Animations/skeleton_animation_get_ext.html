@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>skeleton_animation_get_ext</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">skeleton_animation_get_ext</h1>
+
+<h2 class="studio">Get the animation set used by the given track.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">skeleton_animation_get_ext(track);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+	
+	<tr><td>track</td>
+	<td>The track number to get the animation set name of.</td></tr>
+	
+</table>
+</div>
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>String
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+A single skeletal animation sprite can have various animation sets, and these sets can be assigned different tracks so that you can "mix and match" animation sets. This function will return the name of the 
+animation set currently used by the given track number (as set by the function <a href="skeleton_animation_set_ext.html"><tt>skeleton_animation_set_ext</tt></a>).
+<blockquote>
+<i><b>IMPORTANT: </b>Spine integration in GameMaker: Studio is a Pro licence feature and will not work in the Free/Standard versions.</i>
+</blockquote>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+if skeleton_animation_get_ext(1) != "bodyfight"<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;skeleton_animation_set_ext("bodyfight", 1);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code will change the animation set being used by track 1 to "bodyfight" if it is not already.
+</p>
+  
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Skeletal Animations</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="skeleton_animation_set_ext.html">skeleton_animation_set_ext</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+skeleton_animation_get_ext
+-->

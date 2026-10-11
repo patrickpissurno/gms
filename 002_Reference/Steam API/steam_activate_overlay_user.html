@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>steam_activate_overlay_user</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">steam_activate_overlay_user</h1>
+  
+<h2 class="studio">Activate the Steam user interface overlay with a specific user or group ID.</h2>
+  
+<h3 class="studio">Syntax:</h3>
+<p class="code">steam_activate_overlay_user(dialog_name, steamid);</p>
+  
+<p>
+<br>
+</p>
+ 
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+		
+		<tr><td>dialog_name</td>
+		<td>The dialogue to open the overlay on (see below).</td></tr>
+		
+		<tr><td>steamid</td>
+		<td>The Steam user ID or group ID to use.</td></tr>
+		
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns:</b> N/A
+</p>
+  
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function will open the Steam overlay to one of the chosen dialogues relating to the user ID given. The possible dialogue strings available are:
+<ul>
+	<li>"<b>steamid</b>" - opens the Steam Community web browser to the page of the user or group
+
+	<li>"<b>chat</b>" - opens a chat window to the specified user
+</ul>
+
+<p>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var key = keyboard_lastkey;<br>
+switch (key)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;case vk_f1: steam_activate_overlay_user("steamid", global.GameGroupID); break;<br>
+&nbsp;&nbsp;&nbsp;case vk_f2: steam_activate_overlay_user("chat", global.FriendID); break;<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code polls the last keyboard key pressed and if it is function key 1 or function key 2, it will open the Steam overlay to either see the Steam group stored in the global variable "GamegroupID", 
+or it will open the chat window to chat with the user stored in the global "FriendID" variable.
+</p>
+  
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Steam API</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="steam_is_overlay_activated.html">steam_is_overlay_activated</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+steam_activate_overlay_user
+-->

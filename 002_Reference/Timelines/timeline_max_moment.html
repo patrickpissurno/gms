@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>timeline_max_moment</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">timeline_max_moment</h1>
+
+<h2 class="studio">Gives you the maximum moment placed in a given timeline.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">timeline_max_moment(ind);</p>
+  
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+
+	<tr><td>ind</td>
+	<td>The index of the timeline to get the last moment of.</td></tr>
+
+</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function will return the value of the moment in which the timeline performs its final action. So, if you have a timeline with 8 different actions placed 20 moments apart, this function would return the moment 
+value of the last action in that timeline, which would be 160. This function is a good way to test whether a timeline has passed the last active moment when running, since the timeline position will continue 
+incrementing every step of the game whether there are further actions or not.
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+if timeline_position &gt; timeline_max_moment(timeline_index)<br>
+&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;timeline_running = false;<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code will check the current timeline position against the maximum active moment, and if it is greater the timeline will be stopped.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Timelines</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="timeline_index.html">timeline_index</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+timeline_max_moment
+-->

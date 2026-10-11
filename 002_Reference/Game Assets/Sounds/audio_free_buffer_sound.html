@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>audio_free_buffer_sound</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">audio_free_buffer_sound</h1>
+
+<h2 class="studio">Frees the buffered sound.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">audio_free_buffer_sound(index);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+	
+	<tr><td>index</td>
+	<td>The index of the buffered sound to free.</td></tr>
+	
+</table>
+</div>
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+With this function you can free up the pointer index value associated with the sound ID. Freed sounds will not be available for playing, and if multiple instances of the sound are being played they will all 
+be stopped. Note that before you can delete the buffer itself, you must first free all sound ID's associated with it.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+audio_free_buffer_sound(soundID);
+</p>
+<p>
+The above code frees the buffered sound indexed in the variable "soundID".
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="Audio%20Buffers.html">Audio Buffers</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="audio_create_play_queue.html">audio_create_play_queue</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+audio_free_buffer_sound
+-->

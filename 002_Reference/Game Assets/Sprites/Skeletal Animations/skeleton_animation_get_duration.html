@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>skeleton_animation_get_duration</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">skeleton_animation_get_duration</h1>
+
+<h2 class="studio">Get the time, in seconds, that a given animation set requires to play.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">skeleton_animation_get_duration(animname);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+		
+		<tr><td>animname</td>
+		<td>The name (a string) of the animation set to use.</td></tr>
+		
+	</table>
+</div>
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>Real
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function will return the time required for the given animation set to run before looping back to the beginning. The return value is in seconds.
+<blockquote>
+<i><b>IMPORTANT: </b>Spine integration in GameMaker: Studio is a Pro licence feature and will not work in the Free/Standard versions.</i>
+</blockquote>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example1:</h3>
+<p class="code">
+time += delta_time / 1000000;<br>
+var duration = skeleton_animation_get_duration(skeleton_animation_get());<br>
+var frame = floor((image_number * (mTime / duration)) + 0.5) % image_number;<br>
+image_index = frame;<br>
+draw_self();<br>
+</p>
+<p>
+The above code will set the <tt>image_index</tt> to the correct value for the currently assigned skeletal animation sprite.
+<br>
+<br>
+<h3 class="studio">Example2:</h3>
+<p class="code">
+time += delta_time / 1000000;<br>
+var d = skeleton_animation_get_duration("walk");<br>
+if time > d time -= d;<br>
+draw_skeleton_time(sprite_index, "walk", "skin1", time, x, y, image_xscale, image_yscale, image_angle, c_white);<br>
+</p>
+<p>
+The above code will draw the given skeletal animation sprite using delta-time to set the frame being drawn.
+</p>
+  
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Skeletal Animations</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="skeleton_animation_mix.html">skeleton_animation_mix</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+skeleton_animation_get_duration
+-->

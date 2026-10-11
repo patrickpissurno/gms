@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>skeleton_animation_set_ext</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">skeleton_animation_set_ext</h1>
+
+<h2 class="studio">Set the currently selected skeletal animation sprite to use multiple animation sets.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">skeleton_animation_set_ext(animname, track);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+	
+	<tr><td>animname</td>
+	<td>The name (a string) of the animation set to use.</td></tr>
+	
+	<tr class="alt"><td>track</td>
+	<td>The track for the animation set to use.</td></tr>
+	
+</table>
+</div>
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+When you set an animation set for your skeletal animation sprite, it is assigned <i>track 0</i> internally. However, you can assign further sets to further tracks (1 and above) and in this way have your 
+sprite play two (or more) animations at the same time. Note that the sprite should have been designed in your animation program with this in mind, such that the "base" animation in track 0 only has 
+keyframes for certain bones, while the next tracks have keyframes for the others. For example, if you have a "walk" animation and its keyframes only affect the legs of the sprite, you can then have a 
+set of head animations and arm animations which you can set in tracks 1 and 2 respectively, permitting you to have a base movement and adapt on it in real-time while the game is being played.
+<blockquote>
+<i><b>IMPORTANT: </b>Spine integration in GameMaker: Studio is a Pro licence feature and will not work in the Free/Standard versions.</i>
+</blockquote>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+if mouse_check_button(mb_left)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;skeleton_animation_set_ext("bodyfight", 1);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+else<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;skeleton_animation_set_ext("bodywalk", 1);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code will change the animation set being used by track 1 to the "bodyfight" set or the "bodywalk" set when the left mouse button is pressed.
+</p>
+  
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Skeletal Animations</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="skeleton_animation_get_duration.html">skeleton_animation_get_duration</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+skeleton_animation_set_ext
+-->

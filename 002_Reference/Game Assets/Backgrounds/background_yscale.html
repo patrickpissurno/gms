@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>background_yscale</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">background_yscale</h1>
+
+<h2 class="studio">This variable controls the scaling along the y axis of the given background number.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">background_yscale[0...7]</p>
+
+<p>
+<br>
+</p>
+
+<p>
+<b>Returns: </b>Real
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This variable returns the y axis scale of the image that has been used for the <a href="background_index.html"><tt>background_index</tt></a> of the same array value. The default value is 1, but 
+this can be set to other values to stretch the background image.
+<br>
+<br>
+
+<br>
+<br>
+<i><b>NOTE: </b>You cannot scale backgrounds in any way when using the HTML5 target module without having first enabled WebGL (in the 
+<a href="../../../001_Advanced%20Use/Global%20game%20settings/HTML5%20Tab.html">Global Game Settings</a>).</i>
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+if room_height != background_height[0]<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;background_yscale[0] = 1 * (room_height / background_height[0]);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code will scale background to fit the height of the room.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Backgrounds</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="background_index.html">background_index</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+background_yscale
+-->

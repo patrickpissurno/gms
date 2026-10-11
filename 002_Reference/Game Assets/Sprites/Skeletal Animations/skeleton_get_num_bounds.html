@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>skeleton_get_num_bounds</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">skeleton_get_num_bounds</h1>
+
+<h2 class="studio">Returns the number of bounding boxes attached to the current spine skeleton.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">skeleton_get_num_bounds();</p>
+
+<p>
+<br>
+</p>
+
+<p>
+<b>Returns: </b>Integer
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function will return the number of bounding boxes associated with the skeleton animation sprite assigned to the instance running the code. This can then be used along with the function <a href="skeleton_get_bounds.html"><tt>skeleton_get_bounds</tt></a> to retrieve data about each of the bounding boxes.
+
+<blockquote>
+<i><b>IMPORTANT: </b>Spine integration in GameMaker: Studio is a Pro licence feature and will not work in the Free/Standard versions.</i>
+</blockquote>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var num = skeleton_get_num_bounds();<br>
+var yy = 60;<br>
+for(var i = 0; i &lt; num; i++;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;var b_info = skeleton_get_bounds(i);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if b_info[0] &gt; 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var data = b_info[1] + ":";<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(var j = 0; j &lt; b_info[0]; j++;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data += " (" + string(b_info[(j * 2) + 2]) + ", " + string(b_info[(j * 2) + 2 + 1]) + ")";<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;draw_text(20, yy, data);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yy += 20;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code will loop through each of the bounding boxes associated with the currently assigned sprite and then draw that data as a string to the screen.
+</p>
+  
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Skeletal Animations</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="skeleton_get_bounds.html">skeleton_get_bounds</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+skeleton_get_num_bounds
+-->

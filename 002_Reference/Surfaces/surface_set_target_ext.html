@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>surface_set_target_ext</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">surface_set_target_ext</h1>
+
+<h2 class="studio">Sets the MRT output target to a specific surface.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">surface_set_target_ext(index, surface_id);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+
+		<tr><td>index</td>
+		<td>The render target index to use (from 0 to 3).</td></tr>
+		
+		<tr><td>surface_id</td>
+		<td>The ID of the surface to use.</td></tr>
+
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>Boolean
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function is for use with the <a href="../Shaders/index.html">Shader Functions</a> and sets the MRT (0 - 3) for native level shaders (DX9, DX11, OpenGL).
+<br>
+<br>
+
+<i><b>NOTE: </b>When working with surfaces there is the possibility that they can cease to exist at any time due to them being stored in texture memory. You should <b>ALWAYS</b> check that a surface 
+exists using <a href="surface_exists.html"><tt>surface_exists</tt></a> before referencing them directly. For further information see <a href="index.html">Surfaces</a>.</i>
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+surface_set_target_ext(0, surf);
+</p>
+<p>
+The above code will set the render target 0 to the surface ID indexed in the variable "surf".
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Surfaces</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="surface_reset_target.html">surface_reset_target</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+surface_set_target_ext
+-->

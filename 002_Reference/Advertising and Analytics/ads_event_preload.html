@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>ads_event_preload</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">ads_event_preload</h1>
+  
+<h2 class="studio">Preload a PlayHaven ad placement, ready to be shown.</h2>
+
+<h3><b>Syntax:</b></h3> 
+<p class="code">ads_event_preload(placement)</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+
+	<tr><td>placement</td>
+	<td>The PlayHaven placement name (a string)</td></tr>
+
+</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function will preload a PlayHaven ad into memory, ready for it to be shown when the <a href="ads_event.html"><code>ads_event</code></a> calls the placement used (both functions require the 
+<i>same</i> placement name string to work. If you know that after a certain time or at a certain point in your game you are going to be calling a PlayHaven content placement, then this function can be called 
+beforehand so as to make the user experience as smooth as possible.
+<br>
+<br>
+
+<i><b>NOTE: </b>This function will <b>not</b> show the ad! It only loads it into memory.</i>
+<br>
+<br>
+
+<p>
+<br>
+</p>
+   
+<h3 class="studio">Example:</h3>
+<p class="code">
+ads_event_preload("game_start");
+</p>
+<p>
+The above code will preload an ad from PlayHaven for the placement named "game_start".
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Advertising and Analytics</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="ads_set_reward_callback.html">ads_set_reward_callback</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!--KEYWORDS
+ads_event_preload
+-->

@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>skeleton_bone_data_get</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">skeleton_bone_data_get</h1>
+
+<h2 class="studio">Provides access to the bone data used for the default pose of the skeletal animation.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">skeleton_bone_data_get(bone, map);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+
+	<tr><th>Argument</th><th>Description</th></tr>
+	
+	<tr><td>bone</td>
+	<td>The name (as a string) of the bone.</td></tr>
+	
+	<tr class="alt"><td>map</td>
+	<td>The (previously created) ds_map that stores the bone data.</td></tr>
+	
+</table>
+</div>
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+Your skeletal animation is made up of a number of "bones", which you will have defined and given names to in your animation program. This function can be used to get information on the named bone at any time 
+and store the data in an empty <a href="../../../Data%20Structures/DS%20Maps/index.html"><tt>ds_map</tt></a>, which you must have created previously. Note that this data refers to the <b>default</b> pose for 
+the skeleton, and not the current pose that is being drawn. If you need the data from the <b>current</b> pose, use <a href="skeleton_bone_state_get.html"><tt>skeleton_bone_state_get</tt></a>.
+<br>
+<br>
+
+When you call this function the map will be populated with the following keys:
+<blockquote>
+	<ul>
+		<li><b>"x":</b> The local x position of the bone relative to the parent bone.<br><br>
+
+		<li><b>"y":</b> The local y position of the bone relative to the parent bone.<br><br>
+
+		<li><b>"angle":</b> The local rotation of the bone relative to the parent bone.<br><br>
+
+		<li><b>"xscale":</b> The local horizontal scale of the bone, in reference to the parent bone.<br><br>
+
+		<li><b>"yscale":</b> The local vertical scale of the bone, in reference to the parent bone.<br><br>
+
+		<li><b>"parent":</b> The name (a string) of the parent bone.<br><br>
+	</ul>
+</blockquote>
+
+<p>
+<i><b>IMPORTANT: </b>Spine integration in GameMaker: Studio is a Pro licence feature and will not work in the Free/Standard versions.</i>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+bone_map = ds_map_create();<br>
+skeleton_bone_data_get("leftarm", bone_map);<br>
+</p>
+<p>
+The above code creates a ds_map and then populates it with the data from the bone named "leftarm".
+</p>
+  
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Skeletal Animations</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="skeleton_bone_data_set.html">skeleton_bone_data_set</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+skeleton_bone_data_get
+-->

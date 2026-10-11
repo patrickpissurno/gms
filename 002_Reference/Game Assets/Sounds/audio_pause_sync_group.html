@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>audio_pause_sync_group</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">audio_pause_sync_group</h1>
+
+<h2 class="studio">Pause a synchronised group of tracks that are currently playing.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">audio_pause_sync_group(group_index);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+		
+		<tr><td>group_index</td>
+		<td>The group index to pause.</td></tr>
+		
+	</table>
+</div>
+<p>
+<br>
+</p>
+
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function will pause the given sync group if it is playing, with the group index being the value returned when you created the group using the function <a href="audio_create_sync_group.html">
+<tt>audio_create_sync_group()</tt></a>. This does not stop the sound, and calling <a href="audio_resume_sync_group.html"><tt>audio_resume_sync_group()</tt></a>, will start it playing from 
+the same position it was paused at again.
+<br>
+<br>
+		
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+if (keyboard_check_pressed((ord)"P"))<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;global.Pause = !global.Pause<br>
+&nbsp;&nbsp;&nbsp;if global.Pause<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;audio_pause_sync_group(sg);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;audio_resume_sync_group(sg);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code checks for a key press of the "P" key, and if one is detected it toggles the "global.Pause" variable then checks it to pause or resume the sync group indexed in the variable "sg".
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="Audio%20Synchronisation.html">Audio Synchronisation</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="audio_resume_sync_group.html">audio_resume_sync_group</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+audio_pause_sync_group
+-->

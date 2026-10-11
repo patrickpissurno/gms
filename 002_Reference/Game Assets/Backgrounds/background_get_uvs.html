@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>background_get_uvs</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">background_get_uvs</h1>
+
+<h2 class="studio">Returns the texture coordinates of the background within the texture page as an array.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">background_get_uvs(back);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+
+	<tr><td>back</td>
+	<td>The index of the background to use.</td></tr>
+	
+</table>
+</div>
+<p>
+<br>
+</p>
+
+<p>
+<b>Returns: </b>Array
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function returns an array with the UV coordinates for the texture on the texture page, filling in the array with the following values: [0] = left, [1] = top, [2] = right and [3] = bottom. This value can then be 
+used in other draw functions, particularly in general <a href="../../Drawing/Drawing%203D/index.html">3D</a> and some of the <a href="../../Drawing/Drawing%20Primitives/index.html">2D primitive</a> functions, 
+as well as the <a href="../../Shaders/index.html">Shader</a> functions.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var tex = background_get_uvs(back);<br>
+tex_left = tex[0];<br>
+tex_top = tex[1];<br>
+tex_right = tex[2];<br>
+tex_bottom = tex[3];<br>
+</p>
+<p>
+The above code will store the UV coordinates for the given background in a local array and then assign the values to instance variables.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Backgrounds</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="background_get_name.html">background_get_name</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+background_get_uvs
+-->

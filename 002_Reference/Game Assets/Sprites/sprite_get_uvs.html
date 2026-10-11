@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>sprite_get_uvs</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">sprite_get_uvs</h1>
+
+<h2 class="studio">Returns the texture coordinates of the sprite within the texture page as an array.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">sprite_get_uvs(sprite, subimage);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+
+	<tr><td>sprite</td>
+	<td>The index of the sprite to use.</td></tr>
+
+	<tr class="alt"><td>subimage</td>
+	<td>The sub-image of the sprite to use.</td></tr>
+	
+</table>
+</div>
+<p>
+<br>
+</p>
+
+<p>
+<b>Returns: </b>Array
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function returns an array with the UV coordinates and other data for the texture of the sprite sub-image on the texture page. The function returns an array with the following 8 elements:
+<ul>
+	<li>[0] = left
+	<li>[1] = top
+	<li>[2] = right
+	<li>[3] = bottom
+	<li>[4] = amount of pixels the asset compiler has trimmed from the sprites left side
+	<li>[5] = amount of pixels the asset compiler has trimmed from the sprites top side
+	<li>[6] = normalised percentage of pixel data from the original sprites width that has been saved to the texture page
+	<li>[7] = normalised percentage of pixel data from the original sprites height that has been saved to the texture page
+</ul>
+
+<p>
+This value can then be used in other draw functions, particularly in general <a href="../../Drawing/Drawing%203D/index.html">3D</a> and some of the <a href="../../Drawing/Drawing%20Primitives/index.html">
+2D primitive</a> functions, as well as the <a href="../../Shaders/index.html">Shader</a> functions.
+
+<blockquote>
+	<i><b>NOTE</b>: This function will <b>not</b> work with vector sprites or skeleton animation sprites.</i>
+</blockquote>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var tex = sprite_get_uvs(sprite, 0);<br>
+tex_left = tex[0];<br>
+tex_top = tex[1];<br>
+tex_right = tex[2];<br>
+tex_bottom = tex[3];<br>
+</p>
+<p>
+The above code will store the UV coordinates for the given sprite in a local array and then assign the values to instance variables.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Sprites</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="sprite_get_name.html">sprite_get_name</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+sprite_get_uvs
+-->

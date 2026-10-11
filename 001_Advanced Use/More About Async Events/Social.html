@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Social Event</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+
+<h1 class="studio">Social Event</h1>
+
+<h2 class="studio">This is the sub event that will be triggered by any Social API callbacks received.</h2>
+
+<p>
+This event can only be triggered by the various specific <a href="../../002_Reference/Social%20Gaming/index.html">Social Functions</a>  and will return a 
+<a href="../../002_Reference/Data%20Structures/DS%20Maps/index.html"><tt>ds_map</tt></a> stored in the variable <tt>async_load</tt>, containing different key/value pairs depending on the callback 
+from the function that has triggered the event. 
+<br>
+<br>
+
+The ds_map will contain a number of keys, the most important of which is the "<i>id</i>" key. This will return a <b>constant</b> which can then be checked in code to determine which of the many 
+callbacks the event has received. Once you have parsed this key and compared the value returned with the available constants, you can then continue to extract the rest of the information from the map.
+<br>
+<br>
+
+<h3 class="studio">Achievements And Leaderboards</h3>
+<p>
+The function pages on <a href="../../002_Reference/Social%20Gaming/Achievements%20and%20Leaderboards/index.html">Social Gaming - Achievements and Leaderboards</a> in the Reference section detail the functions 
+and callbacks as well as the constants used to trigger this event, but there are also certain circumstances in which it will be triggered without a function call from the game that is running:
+<blockquote>
+<ul>
+	<li>when your game is launched from the OS dashboard
+	<li>when you complete a challenge
+	<li>when another player completes a challenge
+	<li>when the game is started from the OS dashboard by selecting a challenge
+</ul>
+</blockquote>
+
+
+<p>
+Any of the above callbacks will trigger the <b>Social Event</b> and an <tt>async_load</tt> map will be generated with the following details (note that there is a different "id" key value to define each of the 
+different reasons that the event was called, but all other contents of the map are the same):
+<blockquote>
+	<ol>
+		<li>"<b>id</b>" - The value of this key will depend on the type of callback triggering the event. it can be one of these constants:<br>
+		<ul>
+			<li><b><tt>achievement_challenge_received</tt></b> - A challenge has been received<br>
+			<li><b><tt>achievement_challenge_completed</tt></b> - A challenge has been completed.<br>
+			<li><b><tt>achievement_challenge_completed_by_remote</tt></b> - A challenge has been completed by the other player.<br>
+			<li><b><tt>achievement_challenge_launched</tt></b> - The game was launched from the OS dashboard with the given challenge.<br>
+		</ul>
+		<li>"<b>playerid</b>" - The player id for the challenge.<br><br>
+		<li>"<b>issuerid</b>" - The id of the person that issued the challenge.<br><br>
+		<li>"<b>state</b>" - The state of the challenge, which will have a value of 0 - 3 (as a string) for <i>invalid</i>, <i>pending</i>, <i>completed</i> or <i>declined</i>.<br><br>
+		<li>"<b>message</b>" - The text message for challenge.<br><br> 
+		<li>"<b>issueddate</b>" - The issue date for challenge<br><br> 
+		<li>"<b>completeddate</b>" - The completion date for challenge.<br><br> 
+		<li>"<b>type</b>" - The type of challenge given. Can be one of two constants:<br>
+		<ul>
+			<li><b><tt>achievement_type_score_challenge</tt></b> - A challenge based on the score value.<br>
+			<li><b><tt>achievement_type_achievement_challenge</tt></b> - A challenge based on an achievement.<br>
+		</ul>
+		<li>"<b>identifier</b>" - The identifying string for the challenge.<br><br> 
+		<li>"<b>score</b>" - The score tied in with the challenge. 
+	</ol>
+</blockquote>	
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var ident = ds_map_find_value(async_load, "id" );<br>
+if ident == achievement_challenge_completed;<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;player_id = ds_map_find_value(async_load, "playerid");<br>
+&nbsp;&nbsp;&nbsp;issuer_id = ds_map_find_value(async_load, "issuerid"); <br>
+&nbsp;&nbsp;&nbsp;state = ds_map_find_value(async_load, "state");<br>
+&nbsp;&nbsp;&nbsp;date_completed = ds_map_find_value(async_load, "completeddate");<br>
+&nbsp;&nbsp;&nbsp;date_issued = ds_map_find_value(async_load, "issueddate");<br>
+&nbsp;&nbsp;&nbsp;ach_type = ds_map_find_value(async_load, "type");<br>
+&nbsp;&nbsp;&nbsp;ach_ident = ds_map_find_value(async_load, "identifier");<br>
+&nbsp;&nbsp;&nbsp;ach_score = ds_map_find_value(async_load, "score");<br>
+&nbsp;&nbsp;&nbsp;}
+<p>
+
+<p>
+<br>
+</p>
+<p>
+
+<i><b>NOTE: </b>The variable <tt>async_load</tt> is only valid in the asynchronous events, as the <tt>ds_map</tt> that is points to is created at the start of the event, then deleted again at the end, 
+with this variable being reset to a value of -1. However, all further data-structures created from the event <b>must be cleaned up using the appropriate functions</b>.</i>
+<br>
+<br>
+
+<h3 class="studio">Facebook</h3>
+<p>
+Some of the <a href="../../002_Reference/Social%20Gaming/Facebook/index.html">Facebook functions</a> will trigger a social asynchronous event and create a <tt>ds_map</tt> with some specific information. 
+The information returned will depend on the "type" of event that has been called. You can check this by reading the "type" key from the ds_map, which will be the following string for a Facebook event:
+<blockquote>
+	<ol>
+		<li>"<b>facebook_permission_request</b>"
+	</ol>
+</blockquote>
+
+<p>
+When the event is triggered and is of this type, there will also be additional keys that can be checked:
+<blockquote>
+	<ol>
+		<li>"<b>requestId</b>" - The request ID value returned by the <tt>facebook_request_xxx_permission()</tt> function that triggered the event
+
+		<li>"<b>result</b>" - This will be one of the following strings:
+			<ul>
+				<li>"<b>granted</b>" – permission(s) were accepted by the user
+
+				<li>"<b>denied</b>" – one or more permissions were not accepted by user
+
+				<li>"<b>error</b>" – an error occurred
+			</ul>
+
+		<li><b>"error</b>" - This will contain a description of the error, but is <i>only</i> present when "<b>result</b>" = "<b>error</b>".
+	</ol>
+</blockquote>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">More About Async Events</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="Push.html">Push Notification Events</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+Social Event
+Google Game Services
+Game Circle
+Game Center
+achievement_challenge_received
+achievement_challenge_completed_by_remote
+achievement_challenge_completed
+achievement_challenge_launched
+-->

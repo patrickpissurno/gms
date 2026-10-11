@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Skeletal Animations</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">Skeletal Animations</h1>
+
+<h2 class="studio">This section deals with the functions relating to sprite assets.</h2>
+
+<p>
+The functions found in this section are <i>only</i> for use with sprites that have been imported from a skeletal animation file (like the JSON files that <b>Spine</b> exports) and can be used to get information 
+about an animation asset in your game, as well as for setting certain properties within an animation. These functions can to be used along with the regular sprite functions and variables, permitting you to 
+(for example) mix two skeleton animations using these special functions while setting the image scale using the normal sprite instance variables. For more information on the sprite instance variables see the section on 
+<a href="../../../Objects%20and%20Instances/Instances/Instance%20Properties/index.html">Instance Properties</a>.
+
+<blockquote>
+<i><b>NOTE: </b>For further information on importing skeletal animation sprites made with Spine, please see the section 
+<a href="../../../../001_Advanced%20Use/More%20about%20sprites/Importing%20Skeletal%20Animations.html">Importing Skeletal Animations</a>.</i>
+</blockquote>
+
+<blockquote>
+<i><b>IMPORTANT: </b>Spine integration in GameMaker: Studio is a Pro licence feature and will not work in the Free/Standard versions.</i>
+</blockquote>
+
+<p>
+The functions available are:
+<blockquote>
+	<ol>
+		<li><a href="skeleton_animation_get.html">skeleton_animation_get</a>
+		<li><a href="skeleton_animation_set.html">skeleton_animation_set</a>
+		<li><a href="skeleton_animation_get_ext.html">skeleton_animation_get_ext</a>
+		<li><a href="skeleton_animation_set_ext.html">skeleton_animation_set_ext</a>
+		<li><a href="skeleton_animation_get_duration.html">skeleton_animation_get_duration</a>
+		<li><a href="skeleton_animation_mix.html">skeleton_animation_mix</a>	
+		<li><a href="skeleton_animation_list.html">skeleton_animation_list</a>
+		<li><a href="skeleton_animation_clear.html">skeleton_animation_clear</a>
+		
+		<li><a href="skeleton_animation_get_frames.html">skeleton_animation_get_frames</a>
+		<li><a href="skeleton_animation_get_frame.html">skeleton_animation_get_frame</a>
+		<li><a href="skeleton_animation_set_frame.html">skeleton_animation_set_frame</a>
+		<li><a href="skeleton_get_minmax.html">skeleton_get_minmax</a>
+		<li><a href="skeleton_get_num_bounds.html">skeleton_get_num_bounds</a>
+		<li><a href="skeleton_get_bounds.html">skeleton_get_bounds</a>
+		
+		<li><a href="skeleton_skin_get.html">skeleton_skin_get</a>
+		<li><a href="skeleton_skin_set.html">skeleton_skin_set</a>
+		<li><a href="skeleton_skin_list.html">skeleton_skin_list</a>
+		<li><a href="skeleton_attachment_get.html">skeleton_attachment_get</a>
+		<li><a href="skeleton_attachment_set.html">skeleton_attachment_set</a>
+		<li><a href="skeleton_attachment_create.html">skeleton_attachment_create</a>
+		<li><a href="skeleton_bone_data_get.html">skeleton_bone_data_get</a>
+		<li><a href="skeleton_bone_data_set.html">skeleton_bone_data_set</a>
+		<li><a href="skeleton_bone_state_get.html">skeleton_bone_state_get</a>
+		<li><a href="skeleton_bone_state_set.html">skeleton_bone_state_set</a>
+		<li><a href="skeleton_slot_data.html">skeleton_slot_data</a>
+		<li><a href="skeleton_collision_draw_set.html">skeleton_collision_draw_set</a>
+	</ol>
+</blockquote>
+
+<p>
+You can also use various draw routines designed specifically for these types of sprite (apart from the regular <tt>draw_sprite()</tt> functions). These functions give you more control over what is being drawn and 
+permit you to change animation specific features, such as timing and skins:
+<blockquote>
+	<ol>
+		<li><a href="../../../Drawing/Drawing%20Sprites%20And%20Backgrounds/draw_skeleton.html">draw_skeleton</a><br>
+		<li><a href="../../../Drawing/Drawing%20Sprites%20And%20Backgrounds/draw_skeleton_collision.html">draw_skeleton_collision</a><br>
+		<li><a href="../../../Drawing/Drawing%20Sprites%20And%20Backgrounds/draw_skeleton_time.html">draw_skeleton_time</a><br>
+	</ol>
+</blockquote>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="../index.html">Sprites</a>
+	</div>
+	<!--<div style="float:right">
+		Next: <a href="../index.html"></a>
+	</div>-->
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+skeletal animation
+spine functions
+--> 

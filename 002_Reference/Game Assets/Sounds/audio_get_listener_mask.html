@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>audio_get_listener_mask</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">audio_get_listener_mask</h1>
+
+<h2 class="studio">Gets the default (global) listener bit mask.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">audio_get_listener_mask();</p>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>Real
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function will return the bit-mask data that defines the current default (global) mask for the audio listeners. 
+<br>
+<br>
+
+<p>
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var g_mask = audio_get_listener_mask();<br>
+if g_mask != global.Audio_Mask<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;var num = audio_get_listener_count();<br>
+&nbsp;&nbsp;&nbsp;global.Audio_Mask = 0;
+&nbsp;&nbsp;&nbsp;for(var i = 0; i &lt; num; ++i;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var info = audio_get_listener_info(i);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var m = audio_listener_get_data(info[? "mask"]);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;global.Audio_Mask = global.Audio_Mask | m;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ds_map_destroy(info);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;audio_set_listener_mask(mask);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code gets the current listener mask data and compares it to the data stored in a global variable. If they are not the same, the code checks the number of listeners available then loops through them 
+and gets their mask bits, which are then combined to create a single mask which is applied to the audio system to define the global listeners.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="Audio%20Listeners.html">Audio Listeners</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="audio_sound_get_listener_mask.html">audio_sound_get_listener_mask</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+audio_get_listener_mask
+-->

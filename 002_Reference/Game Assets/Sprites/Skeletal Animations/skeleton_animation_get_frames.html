@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>skeleton_animation_get_frames</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">skeleton_animation_get_frames</h1>
+
+<h2 class="studio">Returns the total number of frames for the specified animation.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">skeleton_animation_get_frames(anim_name);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+
+		<tr><th>Argument</th><th>Description</th></tr>
+		
+		<tr><td>anim_name</td>
+		<td>The animation name to get the frames of.</td></tr>		
+		
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>Integer
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function can be used to retrieve the number of frames that any given skeleton animation has. You supply the skeleton animation name (as a string, as defined in the program used to make the animation, or as returned by using the function <a href="skeleton_animation_get.html"><tt>skeleton_animation_get</tt></a>, and the function returns the frames that it has as an integer value. The function will return 0 if the specified animation does not exist.
+
+<blockquote>
+<i><b>IMPORTANT: </b>Spine integration in GameMaker: Studio is a Pro licence feature and will not work in the Free/Standard versions.</i>
+</blockquote>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var num = skeleton_animation_get_frames(skeleton_animation_get());<br>
+image_index = num -1;<br>
+image_speed = 0;<br>
+</p>
+<p>
+The above code will get the number of frames in the animation and then set the sprite to the last frame and stop animating.
+</p>
+  
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Skeletal Animations</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="skeleton_animation_get_frame.html">skeleton_animation_get_frame</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+skeleton_animation_get_frames
+-->

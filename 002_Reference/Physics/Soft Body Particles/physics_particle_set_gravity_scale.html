@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>physics_particle_set_gravity_scale</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">physics_particle_set_gravity_scale</h1>
+  
+<h2 class="studio">Set the gravity scale factor for <i>all</i> particles in a physics simulation.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">physics_particle_set_gravity_scale(scale)</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+
+		<tr><td>scale</td>
+		<td>The scaling factor to be applied to gravity for all particles.</td></tr>
+
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+With this function you can set the gravity scale factor for particles in the physics simulation. The function is designed to help prevent instability in the physics simulation, especially when using very small particles 
+which may behave unpredictably (i.e. break conservation of momentum) in scenarios such as explosions. Slowing these particles down by reducing gravity scale can stabilize their behaviour. This function is 
+<i>global</i> in scope, in that it will change the gravity scale not just for new particles created after the change, but also for those already present in the simulation.
+<br>
+<br>
+
+<blockquote>
+	<i><b>NOTE:</b> Adjusting the number of update iterations per step (using the function <a href="../The%20Physics%20World/physics_world_update_iterations.html"><tt>physics_world_update_iterations</tt></a> 
+	can also affect the effect of gravity on particles. Larger iteration sizes confer greater resistance to gravity.</i>
+</blockquote>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+physics_particle_set_radius(15);<br>
+physics_particle_set_density(0.5);<br>
+physics_particle_set_damping(1);<br>
+physics_particle_set_gravity_scale(1);<br>
+</p>
+<p>
+The above code will set the base properties for all particles in the simulation.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Soft Body Particles</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="physics_particle_get_max_count.html">physics_particle_get_max_count</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+physics_particle_set_gravity_scale
+--> 

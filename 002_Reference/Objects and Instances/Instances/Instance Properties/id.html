@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>id</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">id</h1>
+
+<h2 class="studio">The unique identifier for the instance.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">id</p>
+  
+<p>
+<br>
+</p>
+
+<p>
+<b>Returns: </b>Real
+</p>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This <b>read-only</b> variable holds the unique identifying number for the instance. Every instance that you create is given a number that is used internally to identify this instance and this variable is 
+what you can use to reference it. The id is also returned (and can be stored in a variable) when an instance is created using <a href="../Instance%20Functions/instance_create.html">instance_create()</a>.
+<blockquote>
+	<i><b>Note: </b>The value of this variable is <i>not</i> the same as the identifier that the instance is given in the room editor and is also different to the <a href="../instance_id.html">
+	instance_id</a> array which contains all the ids of all the currently active instances.</i>
+</blockquote>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+for(var i = 0; i &lt; instance_count; i++;)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;if instance_id[i] != id<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instance_id[i].scr += 5;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code adds 5 to the "scr" variable for every active instance in the room except the one running the code. It does this by looping through ALL the active instances (using the "instance_id" array to return each 
+active instance's ID) and comparing them against the built in "id" variable, which is the ID of the original instance running the code.
+</p>
+  
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Instance Properties</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="solid.html">solid</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+</body>
+</html>
+
+<!-- KEYWORDS
+id
+-->

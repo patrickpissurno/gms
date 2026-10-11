@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>audio_emitter_get_vx</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">audio_emitter_get_vx</h1>
+
+<h2 class="studio">Returns the current velocity along the x axis for a given emitter.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">audio_emitter_get_vx(emitter);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+		
+		<tr><td>emitter</td>
+		<td>The index of the emitter to use.</td></tr>
+		
+	</table>
+</div>
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>Real
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function returns the current velocity along the x axis for the given audio emitter.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+if audio_emitter_get_vx(emitter_player) != 0<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;audio_emitter_velocity(emitter_player, 0, 0, 0);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code checks the current x velocity of a given emitter and if it is not equal to 0, it is set to 0.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="Audio%20Emitters.html">Audio Emitters</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="audio_emitter_get_vy.html">audio_emitter_get_vy</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+audio_emitter_get_vx
+-->

@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>steam_upload_score</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">steam_upload_score</h1>
+  
+<h2 class="studio">Upload a score to the Steam server.</h2>
+  
+<h3 class="studio">Syntax:</h3>
+<p class="code">steam_upload_score(lb_name, score);</p>
+  
+<p>
+<br>
+</p>
+ 
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+		
+		<tr><td>lb_name</td>
+		<td>The name of the leaderboard that you are uploading the scores to (a string).</td></tr>
+		
+		<tr class="alt"><td>score</td>
+		<td>The score to upload (a real number).</td></tr>
+		
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns:</b> Real
+</p>
+  
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function will send a score to the given leaderboard. The score to be uploaded is a real number, and the leaderboard name is a string that was defined when you created the leaderboard using the function 
+<a href="steam_create_leaderboard.html"><tt>steam_create_leaderboard</tt></a>. If the function fails, it will return a value of -1, while a successful post will return a unique ID for the upload and trigger 
+an asynchronous <a href="../../001_Advanced%20Use/More%20About%20Async%20Events/Steam.html">Steam Event</a>. This event will create a <tt>ds_map</tt> in the built in variable <tt>async_load</tt> 
+with the following key/value pairs:
+<br>
+<br>
+
+<ul>
+	<li>"<b>event_type</b>" - This key will hold the value "<b>leaderboard_upload</b>" when triggered by this function</li><br>
+
+	<li>"<b>lb_name</b>" - This key holds the name of the leaderboard which was posted to</li><br>
+
+	<li>"<b>success</b>" - Will be 1 if the post succeeded, 0 failed</li><br>
+
+	<li>"<b>updated</b>" - Will be 1 if the leaderboard score was actually updated (ie: the new score was better) or 0 otherwise</li><br>
+
+	<li>"<b>post_id</b>" - This key should match the ID value returned by the upload call</li><br>
+
+	<li>"<b>score</b>" - This key holds the score which was posted</li><br>
+</ul>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Extended Example:</h3>
+<p>
+In this example, we first upload a score and then parse the <tt>async_load</tt> map returned if successful. The code below shows a typical example for uploading:
+<p class="code">
+if (hp &lt;= 0)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;upload_ID = steam_upload_score("Game Scores", score);<br>
+&nbsp;&nbsp;&nbsp;if (!upload_ID)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alarm[0] = room_speed;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+Note that we have set an alarm if the call fails. This would be used to try the upload again at a later time and you can add extra code there to retry the upload or to save the score to a text file should it 
+continue to fail, etc... We now add the following into the <b>Steam async event</b> for the instance controlling the scores:
+<p class="code">
+var type = ds_map_find_value(async_load, "event_type");<br>
+if (type == "leaderboard_upload")<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;var lb_ID = ds_map_find_value(async_load, "post_id");<br>
+&nbsp;&nbsp;&nbsp;if lb_ID == upload_ID<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var lb_name = ds_map_find_value(async_load, "lb_name");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var lb_done = ds_map_find_value(async_load, "success");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var lb_score = ds_map_find_value(async_load, "score");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var lb_updated = ds_map_find_value(async_load, "updated");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;show_debug_message("leaderboard post id:" + string(lb_ID) + " to lb:" + string(lb_name) + " with score:" + string(lb_score) + " updated=" + string(lb_updated));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (lb_done)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;show_debug_message("- Succeeded");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;show_debug_message("- Failed");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+in the example we are simply outputting the return values to the compiler window as debug messages, but you can use this event to deal with the information in any way you choose.
+<br>
+<br>
+  
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Steam API</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="steam_upload_score_buffer.html">steam_upload_score_buffer</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+steam_upload_score
+-->

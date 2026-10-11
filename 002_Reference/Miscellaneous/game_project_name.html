@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>game_project_name</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">game_project_name</h1>
+  
+<h2 class="studio">Returns a safe version of the game display name.</h2>
+  
+<h3 class="studio">Syntax:</h3>
+<p class="code">game_project_name</p>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>String
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This <b>read only</b> variable returns the display name of your game for the target platform in a "save-friendly" format for the target platform. If the display name contains any characters that are not permitted 
+for a file name, they will be replaced automatically with "_". The display name can be set in the <a href="../../001_Advanced%20Use/Global%20game%20settings/index.html">Global Game Settings</a>. Note that since 
+there are no restrictions on file names for HTML5, this string will probably be the same as that returned by <a href="game_display_name.html"><tt>game_display_name</tt></a>.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio"> <b>Example:</b> </h3>
+<p class="code">
+var file = game_project_name + ".ini";<br>
+ini_open(file);<br>
+ini_write_real("Scores", "Highscore", score);<br>
+ini_close();<br>
+</p>
+<p>
+The above code gets the project name and uses this to open (or create) an ini file which is then written to.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Miscellaneous</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="game_end.html">game_end</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+game_project_name
+--> 

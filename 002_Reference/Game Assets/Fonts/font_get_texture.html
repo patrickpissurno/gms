@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>font_get_texture</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">font_get_texture</h1>
+
+<h2 class="studio">Returns the texture id for the given font.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">font_get_texture(font);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+
+	<tr><td>font</td>
+	<td>The index of the font to use.</td></tr>
+	
+</table>
+</div>
+<p>
+<br>
+</p>
+
+<p>
+<b>Returns: </b>Pointer
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function returns a special <i>pointer</i> for the font texture page. This value can then be used in other draw functions, particularly in general <a href="../../Drawing/Drawing%203D/index.html">3D</a> 
+and some of the <a href="../../Drawing/Drawing%20Primitives/index.html">2D primitive</a> functions, as well as the <a href="../../Shaders/index.html">Shader</a> functions. You can get more information about the returned texture page using the different <tt>texture_</tt> functions found <a href="../../Drawing/index.html">here</a>.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+tex = font_get_texture(fnt_Main);<br>
+</p>
+<p>
+The above code will get the texture pointer for the font indexed as "fnt_Main".
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Fonts</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="font_get_uvs.html">font_get_uvs</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+font_get_texture
+texture pages
+-->

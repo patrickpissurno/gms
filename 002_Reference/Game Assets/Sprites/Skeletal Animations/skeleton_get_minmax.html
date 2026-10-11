@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>skeleton_get_minmax</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">skeleton_get_minmax</h1>
+
+<h2 class="studio">Get the total bounding box position for the sprite</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">skeleton_get_minmax();</p>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>Array (4 elements: xMin, yMin, xMax, yMax)
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function will return an array with the total bounding box value for all the individual bounding boxes assigned to a skeleton animation sprite. The returned array will have 4 elements:
+<ul>
+	<li>[0] - the minimum x position for all bounding boxes
+	<li>[1] - the minimum y position for all bounding boxes
+	<li>[2] - the maximum x position for all bounding boxes
+	<li>[3] - the maximum y position for all bounding boxes
+</ul>
+
+<blockquote>
+<i><b>IMPORTANT: </b>Spine integration in GameMaker: Studio is a Pro licence feature and will not work in the Free/Standard versions.</i>
+</blockquote>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var frame = skeleton_animation_get_frame(0);<br>
+if frame &gt; 0 &amp;&amp; frame &lt; 2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;var box = skeleton_get_minmax();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;var ww = (box[2] - box[0]) / 2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;var hh = (box[3] - box[1]) / 2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;part_particles_create(global.p_sys, box[0] + ww, box[1] + hh, global.Stars, 10); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code will check the current frame of the animation assigned to track 0 and then burst some particles from a point in the middle of the total bounding box for the sprite.
+</p>
+  
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Skeletal Animations</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="skeleton_get_num_bounds.html">skeleton_get_num_bounds</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+skeleton_animation_clear
+-->

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<title>background_flush_multi</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9">
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">background_flush_multi</h1>
+
+<h2 class="studio">Flush multiple background assets (and their assigned texture pages) from memory.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">background_flush(array);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+	
+		<tr><td>array</td>
+		<td>Array with the background indices to flush</td></tr>
+	
+</table>
+</div>
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+	With this function you can remove any number of background textures - and the texture pages they are assigned to - from video memory (their texture pages will be reloaded on next use of any background from them). You supply an array of background asset indices and they will be removed from memory when the function is called. It is worth noting that <i>by default</i> on the Windows platforms (YYC and standard) all textures will always be loaded into memory on start-up. If you are making a cross platform game, then you can leave this function in your code for the Windows target as it will not give any error and just not do anything. However you can also force the Windows target to not load any textures on startup and so use the flush and prefetch functions as you would on all other platforms (the setting can be found in the <a href="../../../001_Advanced%20Use/Global%20game%20settings/Windows%20Tab.html">Windows Global Game Settings</a> window).
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+bck_a[0] = bck_Trees;<br>
+bck_a[1] = bck_Clouds;<br>
+bck_a[2] = bck_Mountains;<br>
+bck_a[3] = bck_Tileset;<br>
+background_flush_multi(bck_a);<br>
+</p>
+<p>
+	The above code creates an array where each element holds a background index. This array is then used to clear those background textures from memory.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Backgrounds</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="background_prefetch.html">background_prefetch</a>
+	</div>
+</div>
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+background_flush_multi
+-->
+

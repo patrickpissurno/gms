@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>get_integer</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">get_integer</h1>
+  
+<h2 class="studio">Displays a pop-up message for the user to input an integer.</h2>
+  
+<h3 class="studio">Syntax:</h3>
+<p class="code">get_integer(str, def);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+	
+		<tr><th>Argument</th><th>Description</th></tr>
+		
+		<tr><td>str</td>
+		<td>The string to show in the pop-up message.</td></tr>
+		
+		<tr class="alt"><td>def</td>
+		<td>The default value in the text box.</td></tr>
+		
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns:</b> Real
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This creates a pop-up window showing a custom message, with a button labeled "Ok", and prompts the user to input an integer value. The function will return the typed in integer, or the default value 
+if nothing has been entered.
+<br>
+<br>
+
+<br>
+<br>
+<i><b>NOTE: </b>THIS FUNCTION IS FOR DEBUG USE ONLY. Should you require this functionality in your final game, please use <a href="../Asynchronous%20Functions/get_integer_async.html">
+<tt>get_integer_async</tt></a>.</i>
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+global.level = get_integer("Level to test?", 1);
+</p>
+<p>
+The above code will display a message prompting the user to select a level for testing. The return value will be stored in the global variable "global.level".
+</p>
+  
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Debugging</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="get_string.html">get_string</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+get_integer
+-->

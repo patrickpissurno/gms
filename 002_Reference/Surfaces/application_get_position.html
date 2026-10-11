@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>application_get_position</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">application_get_position</h1>
+
+<h2 class="studio">Get the position for default drawing of the application surface.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">application_get_position();</p>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>Array
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+When you have "maintain aspect ratio" ticked in the Global Game Settings for a target platform, <i>GameMaker: Studio</i> will automatically set the draw position 
+for the application surface so that it is displayed correctly centered and scaled on the given display. However if you are manipulating this surface and wish to draw it 
+yourself, then this function gives you an easy way to find exactly <i>where</i> within the display or window that the surface was being drawn so that you can then 
+draw it there yourself, or align GUI images or post draw images to it.
+<br>
+<br>
+
+The function will return an array with four keys, where key 0 and 1 are the x and y position of the top lefthand corner of the surface, and keys 2 and 3 are the x and y of 
+the bottom righthand corner of the surface, all relative to the size of the display or window.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var a = application_get_position();<br>
+xx = a[0];<br>
+yy = a[1];<br>
+ww = a[2] - a[0];<br>
+hh = a[3] - a[1];<br>
+</p>
+<p>
+The above code will get the position of the application surface, as well as the absolute width and height in relation to the display window, and store them in four 
+variables for future use.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Surfaces</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="application_surface_draw_enable.html">application_surface_draw_enable</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+application_get_position
+-->

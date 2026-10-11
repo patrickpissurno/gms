@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>audio_stop_music</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">audio_stop_music</h1>
+
+<h2 class="studio">Stops the indicated background music (OBSOLETE).</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">audio_stop_music();</p>
+
+<p>
+<br>
+</p>
+
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+<i><b>WARNING!</b> This function has been obsoleted and you should use <a href="audio_play_sound.html"><tt>audio_play_sound</tt> and <a href="audio_stop_sound.html">
+<tt>audio_stop_sound</tt></a> instead.</i>
+<br>
+<br>
+
+This function will stop any background music that is currently playing. This function only affects the sounds that have been played by the <a href="audio_play_music.html"><tt>audio_play_music</tt></a> 
+function.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+if !global.Music<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;audio_stop_music();<br>
+&nbsp;&nbsp;&nbsp;}<br>
+else<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;audio_play_music(snd_MusicIntro, true);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code checks the global variable "Music" and if it returns false, it will stop all background music that is currently playing, and if it returns true, it will loop the music indexed in the variable 
+"snd_MusicIntro".
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Audio</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="audio_music_is_playing.html">audio_music_is_playing</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+audio_stop_music (obsolete)
+-->

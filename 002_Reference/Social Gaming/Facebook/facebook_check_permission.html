@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>facebook_check_permission</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">facebook_check_permission</h1>
+  
+<h2 class="studio">Check to see if the user has specific publishing or read actions from the Facebook API.</h2>
+
+<h3><b>Syntax:</b></h3> 
+<p class="code">facebook_check_permission(permission)</p>
+
+<p>
+<br>
+</p>
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+
+	<tr><td>permission</td>
+	<td>The permission you want to check (a string).</td></tr>
+	
+</table>
+</div>
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>Real
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+With this function you can check the Facebook API to see if the user has granted a specific permission, either read or publish. The function will return <tt>true</tt> if they have the permission or <tt>false</tt> 
+if they do not or there is an error. Note that the user <i>must</i> be logged in for the check to function.
+<br>
+<br>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var permissions = ds_list_create();<br>
+if !facebook_check_permission("user_likes")<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;ds_list_add(permissions, "user_likes");<br>
+&nbsp;&nbsp;&nbsp;}<br>
+if !facebook_check_permission("user_interests")<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;ds_list_add(permissions, "user_interests");<br>
+&nbsp;&nbsp;&nbsp;}<br>
+if !ds_list_empty(permissions))<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;request_ID = facebook_request_read_permissions(permissions);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+ds_list_destroy(permissions);<br>
+</p>
+<p>
+The above code checks some of the Facebook read permissions, and if the game has not requested them, a request is sent.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Facebook</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="facebook_status.html">facebook_status</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!--KEYWORDS
+facebook_check_permission
+-->

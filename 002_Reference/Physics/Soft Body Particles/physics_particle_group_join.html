@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>physics_particle_group_join</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">physics_particle_group_join</h1>
+  
+<h2 class="studio">Join two particle groups together.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">physics_particle_group_join(to, from)</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+		
+		<tr><td>to</td>
+		<td>The first particle group to join.</td></tr>
+		
+		<tr class="alt"><td>from</td>
+		<td>The second particle group to join.</td></tr>
+
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+With this function you can join two particle groups together, and the joined groups will then behave as if they were both part of a single entity. The groups should have been created with over-lapping edges, as, if 
+they are not already touching, they will not be joined. The function takes the unique group IDs of the groups to join, as returned by the function <a href="physics_particle_group_end.html">
+<tt>physics_particle_group_end()</tt></a>, and you can use the function any number of times for a single group to join various soft bodies together.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile;<br>
+var groupflags = phy_particle_group_flag_solid;<br>
+physics_particle_group_begin(flags, groupflags, mouse_x- 45, mouse_y, 0, 0, 0, 0, c_white, 1, 1, 2);<br>
+physics_particle_group_circle(50);<br>
+var g1 = physics_particle_group_end();<br>
+physics_particle_group_begin(flags, groupflags, mouse_x + 45, mouse_y, 0, 0, 0, 0, c_white, 1, 1, 2);<br>
+physics_particle_group_circle(50);<br>
+var g2 = physics_particle_group_end();<br>
+physics_particle_group_join(g1, g2);<br>
+</p>
+<p>
+The above code creates two circular particle groups and joins them together.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Soft Body Particles</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="physics_particle_group_delete.html">physics_particle_group_delete</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+physics_particle_group_join
+--> 

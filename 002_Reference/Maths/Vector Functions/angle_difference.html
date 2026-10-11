@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>angle_difference</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">angle_difference</h1>
+  
+<h2 class="studio">Returns the difference between two angles.</h2>
+  
+<h3 class="studio">Syntax:</h3>
+<p class="code">angle_difference(ang1, ang2)</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+
+		<tr><td>ang1</td>
+		<td>The first angle to use.</td></tr>
+		
+		<tr class="alt"><td>ang2</td>
+		<td>The second angle to use.</td></tr>
+
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns:</b> Real
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function will return the smallest angle difference between two angles as a value between -180 and 180 degrees (where a positive angle is anti-clockwise and a negative angle clockwise).
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var pd = point_direction(x, y, mouse_x, mouse_y);<br>
+var dd = angle_difference(image_angle, pd);<br>
+image_angle -= min(abs(dd), 10) * sign(dd);<br>
+</p>
+<p>
+The above code will get the angle of direction from the instance to the mouse cursor, then get the difference between that angle and the current <tt>image_angle</tt>, using this value to slowly rotate towards 
+the mouse.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Vector Functions</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="point_direction.html">point_direction</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+angle_difference
+-->

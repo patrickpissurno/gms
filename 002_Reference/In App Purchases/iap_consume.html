@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>iap_consume</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">iap_consume</h1>
+  
+<h2 class="studio">Clears the purchase status of unmanaged purchases.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">iap_consume(purchase_id);</p>
+  
+<p>
+<br>
+</p>
+  
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+
+		<tr><td>purchase_id</td>
+		<td>The product ID string for the purchase.</td></tr>
+
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+  
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function can be used for clearing the purchase status of any unmanaged (consumable) purchases. The "purchase_id" is the product ID string which you specified when activating the IAP using 
+<a href="iap_activate.html"><tt>iap_activate</tt></a>, and should be the same as that which you used to identify the product on the target store. This function will trigger an 
+<a href="../../001_advanced%20use/more%20about%20async%20events/iap.html"><b>IAP Event</b></a> of the "type" <tt><tt>iap_ev_consume</tt></tt>, which will contain the following 
+additional keys:
+<blockquote>
+	<ul>
+		<li>"<b>product</b>" - The product ID for the consumed product.
+	</ul>
+</blockquote>
+<p>
+This product ID can then be used to check which purchase has triggered the event, and you can deal with it accordingly. 
+<br>
+<br>
+
+<i><b>WARNING: </b>You cannot purchase a consumable product multiple times in a row without consumption - you <b>must</b> perform a consume operation between subsequent purchases.</i>
+<br>
+<br>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+if mouse_check_button_pressed(mb_left)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;iap_consume("noads")<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code will clear the purchase status when the mouse button is pressed.
+</p>
+<p>
+
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">In App Purchases</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="iap_product_details.html">iap_product_details</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!--KEYWORDS
+iap_consume
+iap_ev_consume
+-->

@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>audio_start_recording</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">audio_start_recording</h1>
+
+<h2 class="studio">Start recording audio to the recorder buffer from a given source.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">audio_start_recording(recorder_index);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+	
+	<tr><td>recorder_index</td>
+	<td>The index of the recorder source to use.</td></tr>
+	
+</table>
+</div>
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>Index
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function will start recording audio from the recorder source indexed. You can get the number of recorder sources using the function <a href="audio_get_recorder_count.html">
+<tt>audio_get_recorder_count()</tt></a>, and once you start recording the audio will be stored in a temporary buffer and start triggering an 
+<a href="../../../001_Advanced%20Use/More%20About%20Async%20Events/Audio%20Recording.html">Audio Recording Asynchronous Event</a>. This event is triggered every step that recording takes place and will create the 
+special <tt>ds_map</tt> in the variable <tt>async_load</tt> with the following key/value pairs:
+
+<ul>
+	<li> "buffer_id" - the ID of the temporary buffer you can use to retrieve the audio data
+	<li> "channel_index" - the recording channel index (as returned by the function) this data came from
+	<li> "data_len" - the length of data (in bytes) you've received
+</ul>
+
+<p>
+Note that after the asynchronous event has been triggered, the audio in the temporary buffer will be wiped, so you should be copying it's data into a custom buffer that you have previously created.
+<blockquote>
+	<i><b>NOTE: </b>Most platforms support recording audio in some form, but that does not mean that all devices will permit it, even if the platform does, so you should always check that the <a href="audio_get_recorder_count.html"><tt>audio_get_recorder_count()</tt></a> function returns a value greater than 0 to verify that recording devices are available before using the rest of the recording functions.
+</blockquote>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+audio_record = audio_start_recording(0);
+</p>
+<p>
+The above code starts recording from the recorder source 0, storing the channel index of the recording in the variable "audio_record" for use in the asynchronous Audio Recording event.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="Audio%20Buffers.html">Audio Buffers</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="audio_stop_recording.html">audio_stop_recording</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+audio_start_recording
+-->

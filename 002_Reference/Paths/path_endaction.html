@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>path_endaction</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">path_endaction</h1>
+
+<h2 class="studio">Sets what to do when the instance reaches the end of the path.</h2>
+
+<h3><b>Syntax:</b></h3>
+<p class="code">path_endaction;</p>
+
+<p>
+<br>
+</p>
+ 
+<p><b>Returns:</b> Constant.
+
+</p>
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This <i>variable</i> can be used to get or to change the reaction of an instance when it reaches the end of the current path. Normally you would set this when you start the path using 
+<a href="path_start.html"><tt>path_start</tt></a> but you may wish to change this behaviour depending on any number of events in your game. The available values are expressed using the following constants:
+<ul>
+	<li><tt>path_action_stop</tt> = stop the path
+	<li><tt>path_action_restart</tt> = continue from start position, jumping to the start if the path is not closed
+	<li><tt>path_action_continue</tt> = start the path again from the current position
+	<li><tt>path_action_reverse</tt> = reverse the speed of the path (run the path in reverse)
+</ul>
+<p>
+
+<p>
+<br>
+</p>
+<h3><b>Example:</b></h3>
+<p class="code">
+if path_endaction == path_action_stop<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;path_endaction = choose(path_action_restart, path_action_continue, path_action_reverse);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code will check the path end action and if it's set to stop, then a new path end action will be selected randomly.
+</p>
+  
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Paths</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="path_start.html">path_start</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+path_endaction
+path_action_stop
+path_action_restart
+path_action_continue
+path_action_reverse
+-->
+

@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>matrix_set</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">matrix_set</h1>
+  
+<h2 class="studio">Set the given matrix type to the values stored in a (previously created) matrix array.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">matrix_set(type, matrix)</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+
+		<tr><td>type</td>
+		<td>The type of matrix to set the values of (see the <i>constants</i> listed below).</td></tr>
+		
+		<tr class="alt"><td>matrix</td>
+		<td>The matrix array to use for setting the given matrix.</td></tr>
+
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function takes a 16 value 1D array (which you can create using the <a href="matrix_build.html"><tt>matrix_build</tt></a> or <a href="matrix_get.html"><tt>matrix_get</tt></a> functions) and uses 
+it to set one of the following three matrix <i>types</i>:
+<br>
+<br>
+
+<div class="compat">
+
+	<table class="compat">
+	
+		<tr><th>Constant</th><th>Description</th></tr>
+
+		<tr><td>matrix_view</td><td>The current view matrix</td></tr>
+		
+		<tr class="alt"><td>matrix_projection</td><td>The current projection matrix</td></tr>
+		
+		<tr><td>matrix_world</td><td>The current world matrix</td></tr>
+		
+	</table>
+	
+</div>
+<p>
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+matrix_set(matrix_world, m_array);<br>
+</p>
+<p>
+The above code will set the values of the current world matrix to those stored in the array matrix "m_array".
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">3D Transformations</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="matrix_build.html">matrix_build</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+matrix_set
+matrix_view
+matrix_projection
+matrix_world
+--> 

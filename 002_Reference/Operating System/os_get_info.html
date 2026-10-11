@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>os_get_info</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">os_get_info</h1>
+  
+<h2 class="studio">Returns a ds_map with information about the OS.</h2>
+
+<h3 class="studio">Syntax:</h3> 
+<p class="code">os_get_info()</p>
+  
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>Real (ds_map index)
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function returns a <a href="../Data%20Structures/DS%20Maps/index.html"><tt>ds_map</tt></a> with detailed information about the OS that the game is running on. The exact information returned will depend on 
+the OS and the device. Note that the <tt>ds_map</tt> is not automatically cleared from memory and you should use the <a href="../Data%20Structures/DS%20Maps/ds_map_destroy.html"><tt>ds_map_destroy()</tt></a> 
+function when you no longer need the data it contains.
+<br>
+<br>
+
+<i><b>NOTE: </b>This function only works on Android, iOS, Mac, Ubuntu and Windows, on all other target platforms it will return -1 rather than a <tt>ds_map</tt>.</i>
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+os_map = os_get_info();<br>
+if os_map != -1<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;var size, key, i;<br>
+&nbsp;&nbsp;&nbsp;size = ds_map_size(os_map);<br>
+&nbsp;&nbsp;&nbsp;key = ds_map_find_first(os_map);<br>
+&nbsp;&nbsp;&nbsp;for (i = 0; i &lt; size - 1; i++;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map_data[i] = ds_map_find_value(os_map, key);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key = ds_map_find_next(os_map, key);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;ds_map_destroy(os_map);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code will check the OS information to see if a <tt>ds_map</tt> is returned. If it is, then the code will loop through the map and assign all the values to an array.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Operating Systems</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="os_powersave_enable.html">os_powersave_enable</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!--KEYWORDS
+os_get_info
+-->

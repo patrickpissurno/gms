@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>physics_particle_group_get_vel_y</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">physics_particle_group_get_vel_y</h1>
+  
+<h2 class="studio">Get the vertical velocity of a whole group of particles.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">physics_particle_group_get_vel_y(group)</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+
+		<tr><td>group</td>
+		<td>The particle group to get.</td></tr>
+
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+
+<p>
+<b>Returns: </b>Real
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+With this function you can retrieve the vertical velocity of a group of particles. The <tt>group</tt> value is that which was returned when you created the group of particles using the 
+function <a href="physics_particle_group_end.html"><tt>physics_particle_group_end</tt></a>, and the function will return a value which is the combined value of the currently set flags.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+vx = physics_particle_group_get_vel_x(group1);<br>
+vy = physics_particle_group_get_vel_y(group1);<br>
+<br>
+</p>
+<p>
+The above code will get the horizontal and vertical velocity of the particle group indexed in the variable "group1" and store them in variables.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Soft Body Particles</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="physics_particle_group_get_ang_vel.html">physics_particle_group_get_ang_vel</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+physics_particle_group_get_vel_y
+--> 

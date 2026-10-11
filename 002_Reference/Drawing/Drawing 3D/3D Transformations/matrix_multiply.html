@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>matrix_multiply</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">matrix_multiply</h1>
+  
+<h2 class="studio">Multiply two matrix arrays together.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">matrix_multiply(matrix1, matrix2)</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+
+		<tr><td>matrix1</td>
+		<td>The first matrix (as an array) to use.</td></tr>
+		
+		<tr class="alt"><td>matrix2</td>
+		<td>The second matrix (as an array) to use.</td></tr>
+		
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>Array
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+With this function you can multiply two matrix arrays together to create a new transform matrix. The function will return the new matrix (again, as an array) which should be stored in a variable for future use.
+<br>
+<br>
+
+<i><b>NOTE: </b>You can't use a matrix constant as an argument with this function, so if you wish to multiply the (for example) view matrix with a custom matrix that you have built, you must first call 
+<a href="matrix_get.html"><tt>matrix_get(type)</tt></a> and assign the view matrix values to an array variable, then multiply it by your custom matrix, and then set the chosen matrix (view, projection or world).</i>
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var v_matrix = matrix_get(matrix_view);<br>
+var new_matrix = matrix_multiply(v_matrix, my_matrix);<br>
+matrix_set(matrix_view, new_matrix);<br>
+</p>
+<p>
+The above code will get the current view matrix, then multiply that with a custom matrix and then use the resulting matrix array to set the view matrix again.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">3D Transformations</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="d3d_transform_set_identity.html">d3d_transform_set_identity</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+matrix_multiply
+--> 

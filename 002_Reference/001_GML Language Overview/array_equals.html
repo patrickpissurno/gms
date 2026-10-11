@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>array_equals</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">array_equals</h1>
+  
+<h2 class="studio">Check to see if two arrays are equal (equivalent or the same).</h2>
+  
+<h3 class="studio">Syntax:</h3>
+<p class="code">array_equals(var1, var2);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+
+		<tr><td>var1</td>
+		<td>The index of the first array.</td></tr>
+
+		<tr><td>var2</td>
+		<td>The index of the second array.</td></tr>
+
+	</table>
+</div>
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>Boolean
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+	With this function you can check to see if two arrays are equal (equivalent or the same). You give the two arrays to check, and the function will return <tt>true</tt> if they are equal (either equivalent or the same) or <tt> false</tt> if they are not. Note that this is <i>not</i> the same as checking if two arrays are the same using ==, which will not check to see if the two arrays hold equivalent values, but only to see if the arrays are referencing the same initial array. For example:
+	
+	<p class="code">
+		var a = [1,2,3,4];<br>
+		var b = [1,2,3,4];<br>
+		if (a == b)<br>
+		&nbsp;&nbsp;&nbsp;{<br>
+		&nbsp;&nbsp;&nbsp;show_debug_message( "This will never fire, as a and be do not reference the SAME array" );<br>
+		&nbsp;&nbsp;&nbsp;}<br>
+		if (array_equals(a, b))<br>
+		&nbsp;&nbsp;&nbsp;{<br>
+		&nbsp;&nbsp;&nbsp;show_debug_message( "This will fire now" );<br>
+		&nbsp;&nbsp;&nbsp;}<br>
+	</p>
+	
+<p>
+
+<p>
+<br>
+</p>
+
+
+<h3>Example:</h3>
+<p class="code">
+if !array_equals(inventory_array, item_array)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;var len = array_length_1d(inventory_array);<br>
+&nbsp;&nbsp;&nbsp;array_copy(item_array, 0, inventory_array, 0, len);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+	The above code will check two arrays to see if they hold equivalent values, and if they do not then the code will copy the entire contents of the array "inventory_array" to the array "item_array".
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="401_06_arrays.html">Arrays</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="array_length_1d.html">array_length_1d</a>
+	</div> 
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+array_equals
+--> 

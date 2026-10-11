@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>async_load</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">async_load</h1>
+
+<h2 class="studio">Global variable for holding a DS map when used in the Asynchronous Events.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">async_load;</p>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>Real
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This variable is <b>global</b> in scope and is used to hold a <a href="../../Data%20Structures/DS%20Maps/index.html">DS map</a> when used in the <a href="../../../001_Advanced%20Use/More%20About%20Async%20Events/index.html">Asynchronous Events</a>, and -1 at all other times. The actual contents of the DS map will depend on the type of asynchronous event that it is populated in, and the function that was used to trigger the event, so refer to the individual pages for those events.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+if ds_map_find_value(async_load, "id") == back<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;if ds_map_find_value(async_load, "status") >= 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background_index[0] = back<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code is taken from the Image Loaded Asynchrnous Event and will first check the ID of the <tt>async_load</tt> DS map that has been populated, then check the status of the callback. If the value is greater than or equal to 0 (signalling success) the result from the callback will then be used to set the background index to the newly loaded image.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="Global%20Variables.html">Global Variables</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="score.html">score</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+async_load
+-->

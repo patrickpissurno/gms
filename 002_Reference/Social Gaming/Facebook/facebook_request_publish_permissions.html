@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>facebook_request_publish_permissions</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">facebook_request_publish_permissions</h1>
+  
+<h2 class="studio">Request specific publishing actions from the Facebook API.</h2>
+
+<h3><b>Syntax:</b></h3> 
+<p class="code">facebook_request_publish_permissions(permissions)</p>
+
+<p>
+<br>
+</p>
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+
+	<tr><td>permissions</td>
+	<td>The permissions you want to have from the user.</td></tr>
+	
+</table>
+</div>
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>Real
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+With this function you can request additional publishing permissions for Facebook. These permissions are added (as strings) to a previously created <tt>ds_list</tt> which is then used in the function to send the 
+request. The user must be successfully logged in (ie. they have called <a href="facebook_login.html"><tt>facebook_login</tt></a>) and the <a href="facebook_status.html"><tt>facebook_status</tt></a> 
+should be "AUTHORISED" before you call this function. the functon returns a unique ID value for the request call or -1 if the request was not sent (for example, the user is not logged in).
+<br>
+<br>
+
+This function will trigger an <a href="../../../001_Advanced%20Use/More%20About%20Async%20Events/Social.html">Asynchronous Social Event</a>, which contains the ds_map <tt>async_load</tt>. This ds_map will be populated 
+with various key/value pairs to report the success or failure of the request.
+<br>
+<br>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var request = "publish_actions";<br>
+if !facebook_check_permission(request)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;var permissions = ds_list_create();<br>
+&nbsp;&nbsp;&nbsp;ds_list_add(permissions, request);<br>
+&nbsp;&nbsp;&nbsp;request_ID = facebook_request_publish_permissions(permissions);<br>
+&nbsp;&nbsp;&nbsp;ds_list_destroy(permissions);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code checks the current Facebook permissions, and if the game has not requested the "publish_actions" permission, then a request is sent.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Facebook</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="facebook_request_read_permissions.html">facebook_request_read_permissions</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!--KEYWORDS
+facebook_request_publish_permissions
+-->

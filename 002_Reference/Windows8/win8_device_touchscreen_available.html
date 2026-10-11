@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>win8_device_touchscreen_available</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">win8_device_touchscreen_available</h1>
+
+<h2 class="studio">Check to see if the Windows 8 device has a touchscreen or not.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">win8_device_touchscreen_available();</p>
+
+<p>
+<br>
+</p>
+
+<p>
+<b>Returns: </b>Boolean
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function will check the device running your game and return <tt>true</tt> if it is touch screen enabled (like a Surface RT device) or 
+<tt>false</tt> if it is not (like a desktop PC).
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+if win8_device_touchscreen_available()<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;vk[2] = virtual_key_add(32, display_get_height() - 128, 64, 64, vk_left);<br>
+&nbsp;&nbsp;&nbsp;vk[1] = virtual_key_add(128, display_get_height() - 128, 64, 64, vk_right);<br>
+&nbsp;&nbsp;&nbsp;vk[0] = virtual_key_add(display_get_width() - 96, display_get_height() - 128, 64, 64, vk_up);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code will check for touch screen availability and if it is enabled, create three virtual keys.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Windows 8</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="win8_livetile_tile_notification.html">win8_livetile_tile_notification</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+win8_device_touchscreen_available
+-->

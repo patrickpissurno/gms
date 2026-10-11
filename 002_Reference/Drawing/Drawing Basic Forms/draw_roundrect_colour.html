@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>draw_roundrect_colour</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">draw_roundrect_colour</h1>
+
+<h2 class="studio">Draws a rectangle with rounded corners of a fixed radius, colouring it with a gradient of two colours.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">draw_roundrect_colour(x1, y1, x2, y2, col1, col2, outline);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+
+	<tr><td>x1</td>
+	<td>The x coordinate of the left of the rounded rectangle.</td></tr>
+
+	<tr class="alt"><td>y1</td>
+	<td>The y coordinate of the top of the rounded rectangle.</td></tr>
+
+	<tr><td>x2</td>
+	<td>The x coordinate of the right of the rounded rectangle.</td></tr>
+
+	<tr class="alt"><td>y2</td>
+	<td>The y coordinate of the bottom of the rounded rectangle.</td></tr>
+
+	<tr><td>col1</td>
+	<td>The center colour.</td></tr>
+
+	<tr class="alt"><td>col2</td>
+	<td>The outside edge colour.</td></tr>
+
+	<tr><td>outline</td>
+	<td>Whether the rectangle is an outline (true) or filled in (false).</td></tr>
+
+</table>
+</div>
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+With this function you can draw either an outline of a rounded rectangle or a filled rounded rectangle where the (x1,y1) position is the top left corner and the (x2,y2) position is the bottom right corner. If it is filled 
+you can define the individual colours for the centre and the edges, and if these colours are not the same, you will get a gradient effect from one to the other (the colour settings will over-ride the base colour set 
+with the function <a href="../colour%20And%20Blending/draw_set_colour.html"><tt>draw_set_colour</tt></a>).You can define how precise the drawing of the corners is with the function 
+<a href="draw_set_circle_precision.html"><tt>draw_set_circle_precision</tt></a>, but the corners are always drawn with a fixed radius. Should you need to change the corner radius you should use the function 
+<a href="draw_roundrect_colour_ext.html"><tt>draw_roundrect_colour_ext()</tt></a>.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+draw_roundrect_colour(50, 50, 200, 200, c_black, c_white, false);
+</p>
+<p>
+This would draw a filled-in square with rounded corners and with a smooth black/white gradient from the center to the edges.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="../index.html">Drawing Basic Forms</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="draw_roundrect_ext.html">draw_roundrect_ext</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+draw_roundrect_colour
+-->

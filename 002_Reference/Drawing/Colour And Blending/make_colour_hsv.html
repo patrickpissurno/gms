@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>make_colour_hsv</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">make_colour_hsv</h1>
+ 
+<h2 class="studio">Returns a colour based on hue, saturation and value.</h2>
+
+<p><b>Syntax:</b></p>
+<p class="code">make_colour_hsv(hue, sat, val);</p>
+  
+<p>
+<br>
+</p>
+ 
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+	
+	<tr><td>hue</td>
+	<td>The hue of the colour</td></tr>
+	
+	<tr class="alt"><td>sat</td>
+	<td>How saturated the colour is</td></tr>
+	
+	<tr><td>val</td>
+	<td>How dark the colour is</td></tr>
+
+</table>
+</div>
+  
+<p>
+<br>
+</p>
+
+<p>
+<b>Returns:</b> value
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+<i>GameMaker: Studio</i> provides this function (as well as others) to permit the user to make their own colours. This particular function takes three component parts, the <i>hue</i>, the <i>saturation</i> 
+and the <i>value</i> (also know as "luminosity") to create the colour desired. These values are taken as being between 0 and 255 so you can make 16,777,216 (256*256*256) colours with this! Below you 
+can see an image of how these components look when separated:
+
+<img class="center" src="HSV.png"></img>
+
+The image on the left is a break-down of the individual components of the function, and then on the right is an illustration of how changing these components affects the end colour. As you can see, even without 
+changing the hue (it stays at 0, red), we can dramatically change the colour with the other two settings, with saturation making the colour tone go from grey (0) to a pure tone (255), and with the value making it 
+go from darker (0) to lighter (255).
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+col = make_colour_hsv(100, 145, 255);
+</p>
+<p>
+The above code uses the function to create a colour and store its value in the variable "col" for later use.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">colour and Blending</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="make_colour_rgb.html">make_colour_rgb</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+make_colour_hsv
+-->

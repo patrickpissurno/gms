@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>audio_create_play_queue</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">audio_create_play_queue</h1>
+
+<h2 class="studio">Create a queue of audio from a buffer for streaming.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">audio_create_play_queue(queueFormat, queueRate, queueChannels);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+	
+	<tr><td>queueFormat</td>
+	<td>The format of the buffer data to use (<tt>buffer_u8</tt> or <tt>buffer_s16</tt>).</td></tr>
+	
+	<tr class="alt"><td>queueRate</td>
+	<td>The sample rate of the data in the buffer queue.</td></tr>
+
+	<tr><td>queueChannels</td>
+	<td>The channels to use from one of the constants listed below.</td></tr>
+	
+</table>
+</div>
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>Index
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function prepares a buffer queue for audio. You pass data format (only <tt>buffer_u8</tt> or <tt>buffer_s16</tt> are currently supported), the sample rate (which can be between 1000hz and 48000hz), 
+and the channels that the audio requires from one of the constants listed 
+below:
+<div class="compat">
+	<table>
+	
+		<tr><th>Constant</th>						<th>Description</th></tr>
+		
+		<tr><td>audio_mono</td>					<td>Mono (single channel) audio.</td></tr>
+		
+		<tr class="alt"><td>audio_stereo</td>	<td>Stereo (dual channel) audio.</td></tr>
+		
+		<tr><td>audio_3D</td>						<td>3D (5.1) audio.</td></tr>
+		
+	</table>
+</div>
+
+<p>
+<br>
+Note that you should free up any audio queues created with this function when no longer required to prevent memory leaks using the function <a href="audio_free_play_queue.html"><tt>audio_free_play_queue()</tt></a>.
+<br>
+<br>
+This function will trigger an <a href="../../../001_Advanced%20Use/More%20About%20Async%20Events/Audio%20Playback.html">Audio Playback Asynchronous Event</a> when the queue has reached the end, and in this event 
+a special <tt>ds_map</tt> will be created in the variable <tt>async_load</tt> with the following key/value pairs:
+
+	<ul>
+		<li>"queue_id" - the queue that has finished playing data
+		
+		<li>"buffer_id" - the buffer that is no longer being played from
+		
+		<li>"queue_shutdown" - this is set to 0 during normal playback and 1 when the event is received because <a href="audio_free_play_queue.html"><tt>audio_free_play_queue</tt></a> has been called. When this 
+		is set to 1, you don't want to queue up any further data.
+		
+	</ul>
+	
+	
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+audio_queue = audio_create_play_queue(buffer_s16, 11052, audio_mono);
+</p>
+<p>
+The above code creates a new audio queue and assigns its index to a variable for future reference.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="Audio%20Buffers.html">Audio Buffers</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="audio_free_play_queue.html">audio_free_play_queue</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+audio_create_play_queue
+-->

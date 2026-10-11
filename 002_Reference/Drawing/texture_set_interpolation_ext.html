@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>texture_set_interpolation_ext</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">texture_set_interpolation_ext</h1>
+
+<h2 class="studio">Indicates whether to use linear interpolation or not for a given shader sampler.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">texture_set_interpolation_ext(sampler_id, linear);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+		
+		<tr><td>sampler_id</td>
+		<td>The sampler id from the shader.</td></tr>
+		
+		<tr><td>linear</td>
+		<td>Turn linear interpolation on (<tt>true</tt>) or off (<tt>false</tt>).</td></tr>
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function can be used to set the linear interpolation a single sampler "slot" when using <a href="../Shaders/index.html">Shaders</a> in <i>GameMaker: Studio</i>. When this is set to on (<tt>true</tt>) 
+the sampler texture will be smoothed and if this is switch off (<tt>false</tt>) then images will be drawn based on the nearest pixel. The default value is that set by the 
+<a href="../../001_Advanced%20Use/Global%20game%20settings/index.html">Global Game Settings</a> for your game, or that set using the function <a href="texture_set_interpolation.html">
+<tt>texture_set_interpolation</tt></a>.
+<br>
+<br>
+
+<i><b>NOTE: </b> This setting will be over-ridden by the value set when calling the function <a href="texture_set_interpolation.html"><tt>texture_set_interpolation()</tt></a></i>.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+shader_sample = shader_get_sampler_index(shader_glass, "s_NoiseSampler");<br>
+texture_set_interpolation_ext(shader_sample, false);<br>
+<p>
+The above code will turn interpolation of for the image used in the shader sampler.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Drawing</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="texture_set_blending.html">texture_set_blending</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+texture_set_interpolation_ext
+-->

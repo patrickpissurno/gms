@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>skeleton_animation_set</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">skeleton_animation_set</h1>
+
+<h2 class="studio">Set the currently selected skeletal animation sprite to use the given animation set.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">skeleton_animation_set(animname);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+	
+	<tr><td>animname</td>
+	<td>The name (a string) of the animation set to use.</td></tr>
+	
+</table>
+</div>
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+Once you have assigned a skeletal animation sprite to your instance, you can then define which <i>animation set</i> it should use at any given time with this function. When you created your sprite (in Spine) 
+you will have defined multiple animations sets for different states and named each of them appropriately. These names are what you will use to tell <i>GameMaker: Studio</i> which animation set to use at any 
+time in your game. For example, if your sprite is for a platform game, then you may have a "jump" set, a "run" set and an "idle" set all contained within the one sprite and you can switch between them in your 
+game using this function.
+<br>
+<br>
+
+Note that setting a new animation in this way will reset the <tt>image_index</tt> to 0, starting the new animation set from the beginning of its animation loop. If this is <i>not</i> the desired behaviour, then 
+you can set a "mix" value using <a href="skeleton_animation_mix.html"><tt>skeleton_animation_mix</tt></a> and when you set a new animation it will be smoothly interpolated with the previous set. You 
+should also make sure to have a keyframe at the beginning of every animation to prevent data from being held-over from previous animations, unless you plan on using separate animation tracks.
+<blockquote>
+<i><b>IMPORTANT: </b>Spine integration in GameMaker: Studio is a Pro licence feature and will not work in the Free/Standard versions.</i>
+</blockquote>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+if keyboard_check_pressed(vk_space)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;if skeleton_animation_get() != "jump"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;skeleton_animation_set("jump");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code will change the animation set being used to the "jump" set when the space key is pressed, but only if the current set being used is not already "jump".
+</p>
+  
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Skeletal Animations</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="skeleton_animation_get_ext.html">skeleton_animation_get_ext</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+skeleton_animation_set
+-->

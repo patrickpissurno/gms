@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>ds_map_replace_list</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">ds_map_replace_list</h1>
+  
+<h2 class="studio">Replace a list with another list after it has been added to a ds_map.</h2>
+  
+<h3><b>Syntax:</b> </h3>
+<p class="code">ds_map_replace_list(id, key, value)<p>
+
+<p>
+<br>
+</p>
+  
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+		
+		<tr><td>id</td>
+		<td>The id of the map to use.</td></tr>
+		
+		<tr class="alt"><td>key</td>
+		<td>The key to replace.</td></tr>
+		
+		<tr><td>value</td>
+		<td>The id of the ds_list to use to replace the one previously stored in the given key.</td></tr>
+		
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p><b>Returns:</b> N/A</p>
+  
+<p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+With this function you can replace a <a href="../DS%20Lists/index.html"><tt>ds_list</tt></a> that has been stored in the given "key" with another list that has been created previously. This function is designed 
+for creating JSON compatible maps which you would then encode using <a href="../../File%20Handling/json_encode.html"><tt>json_encode</tt></a> and should only be used in conjunction with that functionality.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var j_list = ds_list_create();<br>
+ds_list_add(j_list, health);<br>
+ds_list_add(j_list, lives);<br>
+ds_list_add(j_list, score);<br>
+ds_map_replace_list(j_map, "list", j_list);<br>
+var j = json_encode(j_map);<br>
+ds_list_destroy(j_list);<br>
+</p>
+<p>
+The above code will create a <tt>ds_list</tt> and populate it with the values of various global variables before replacing a previously stored list in the <tt>ds_map</tt> "j_map".
+<br>
+</p>
+  
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">DS Maps</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="ds_map_replace_map.html">ds_map_replace_map</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+</body>
+</html>
+
+<!--KEYWORDS
+ds_map_replace_list
+-->

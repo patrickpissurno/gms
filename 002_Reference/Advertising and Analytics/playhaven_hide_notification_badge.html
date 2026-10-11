@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>playhaven_hide_notification_badge</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">playhaven_hide_notification_badge</h1>
+  
+<h2 class="studio">Hide a PlayHaven notification.</h2>
+
+<h3><b>Syntax:</b></h3> 
+<p class="code">playhaven_hide_notification_badge(x, y, w, h, ident)</p>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+With this function you can hide any PlayHaven notification badges that you have previously created with the function <a href="playhaven_add_notification_badge.html">
+<code>playhaven_add_notification_badge</code></a>.
+<br>
+<br>
+   
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+if global.game_state != st_mainmenu<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;playhaven_hide_notification_badge();<br>
+&nbsp;&nbsp;&nbsp;}<br>
+else<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;playhaven_add_notification_badge(x- 16, y - 16, 32, 32, "games_widget");<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code will check the value of a global variable and either add or hide a PlayHaven notification badge.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Advertising and Analytics</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="playhaven_position_notification_badge.html">playhaven_position_notification_badge</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!--KEYWORDS
+playhaven_hide_notification_badge
+-->

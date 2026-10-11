@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>vertex_submit</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">vertex_submit</h1>
+
+<h2 class="studio">Freeze the given vertex buffer.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">vertex_submit(buffer, primitive, texture);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+		
+		<tr><td>buffer</td>
+		<td>The buffer to use.</td></tr>
+
+		<tr class="alt"><td>primitive</td>
+		<td>The primitive base type.</td></tr>
+		
+		<tr><td>texture</td>
+		<td>The texture to use (or -1 for no texture).</td></tr>
+		
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+You can use this function to submit the contents of a vertex buffer to the graphics pipeline for use with a shader. You supply the buffer index to use, the base primitive type to use (see the constants below) and 
+the texture that is to be used. The base primitive type is only used for assigning the order in which the vertexes that you stored in the buffer are drawn and connected, but the actual data used for each of the vertexes 
+will be that which you defined when creating the vertex buffer.
+<br>
+<br>
+
+For a visual example of the different base primitives available, please see the function <a href="../../Drawing/Drawing%20Primitives/draw_primitive_begin.html">draw_primitive_begin</a>
+<br>
+<br>
+
+<i><b>NOTE:</b> this function can only be used in the <b>Draw Event</b>.</i>
+<br>
+<br>
+
+<div class="compat">
+
+	<table>
+	
+		<tr><th>Constant</th><th>Description</th></tr>
+
+		<tr><td>pr_pointlist</td><td>A primitive consisting of a list of points.</td></tr>
+		
+		<tr class="alt"><td>pr_linelist</td><td>A primitive made up of a individual lines in a list.</td></tr>
+
+		<tr><td>pr_linestrip</td><td>A primitive made up of a consecutive strip of lines.</td></tr>
+		
+		<tr class="alt"><td>pr_trianglelist</td><td>A primitive made up of individual triangles in a list.</td></tr>
+		
+		<tr><td>pr_triangle_strip</td><td>A primitive made up of a consecutive strip of triangles.</td></tr>
+
+	</table>
+	
+</div>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+shader_set(shader_prim);<br>
+vertex_submit(buff, pr_trianglelist, sprite_get_texture(sprite_index));<br>
+shader_reset();<br>
+<p>
+The above code will submit the vertex buffer indexed in the variable "buff" for drawing with the shader "shader_prim", using a triangle list as the base primitive and the texture of the sprite for the instance running 
+the code.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Building Primitives</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="vertex_create_buffer.html">vertex_create_buffer</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+vertex_submit
+-->

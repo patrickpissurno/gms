@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>surface_resize</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">surface_resize</h1>
+
+<h2 class="studio">Resize a previously created surface.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">surface_resize(surface_id, w, h);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+	
+	<tr><td>surface_id</td>
+	<td>The ID of the surface to change.</td></tr>
+	
+	<tr  class="alt"><td>w</td>
+	<td>The width of the new surface.</td></tr>
+	
+	<tr><td>h</td>
+	<td>The height of the new surface.</td></tr>
+
+</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function will resize a surface to the given dimensions (in pixels). The surface_id is that of a surface you have created previously, or the <a href="The%20Application%20Surface.html"><tt>application_suface</tt></a>, and the 
+function will resize that surface. Note that this will neither crop nor stretch the contents of the surface, but rather it destroys the current surface and recreates it with the same handle (surface_id) with the new dimensions, 
+meaning that it will need to be cleared and drawn to again (unless it is the <tt>application_surface</tt> in which case <i>GameMaker: Studio</i> will do this automatically).
+<blockquote>
+	<i><b>NOTE: </b>If you are resizing the application surface, these changes will not be registered until the start of the next draw frame, meaning that calling the <a href="surface_get_width.html">
+	<tt>surface_get_width()</tt></a> or <a href="surface_get_height.html"><tt>surface_get_height()</tt></a> functions in the same event or step will return the previous values.</i>
+</blockquote>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+if view_wport[0] != surface_get_width(application_surface) || view_hport[0] != surface_get_height(application_surface)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;surface_resize(application_surface, view_wport[0],view_hport[0]);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code will check the view port size against that of the surface "aplication_surface" and if it is different, the surface is re-sized.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Surfaces</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="surface_set_target.html">surface_set_target</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+surface_resize
+-->

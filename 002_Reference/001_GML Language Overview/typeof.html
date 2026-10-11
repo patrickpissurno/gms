@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>typeof</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">typeof</h1>
+  
+<h2 class="studio">Returns the type of variable being checked as a string.</h2>
+  
+<h3><b>Syntax:</b></h3>
+<p class="code">typeof(variable);</p>
+  
+<p>
+<br>
+</p>
+  
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+
+	<tr><td>variable</td>
+	<td>The variable to get the type of.</td></tr>
+	
+</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p><b>Returns: </b>String</p>
+  
+<p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+	This function returns the data type of any given variable as a string. The possible return values are listed in the table below:
+	<div class="compat">
+		<table>
+		
+			<tr><th>String</th><th>Description</th></tr>
+			
+			<tr><td>number</td><td>The variable holds a real (floating point) number</td></tr>
+			
+			<tr class="alt"><td>string</td><td>The variable holds a string</td></tr>
+			
+			<tr><td>array</td><td>The variable references an array</td></tr>
+			
+			<tr class="alt"><td>bool</td><td>The variable holds a boolean (<tt>true</tt> / <tt>false</tt>)</td></tr>
+			
+			<tr><td>int32</td><td>The variable holds a 32bit integer</td></tr>
+			
+			<tr class="alt"><td>int64</td><td>The variable holds a 64 bit integer</td></tr>
+			
+			<tr><td>ptr</td><td>The variable holds a pointer</td></tr>
+			
+			<tr class="alt"><td>undefined</td><td>The variable is undefined</td></tr>
+			
+			<tr><td>null</td><td>The variable holds a null value (this should not be seen normally)</td></tr>
+			
+			<tr class="alt"><td>vec3</td><td>The variable holds a 3 value vector</td></tr>
+			
+			<tr><td>vec4</td><td>The variable holds a 4 value vector</td></tr>
+			
+			<tr class="alt"><td>unknown</td><td>Value is unknown. This should <i>never</i> be seen and signifies that something has gone wrong at the most basic level like a memory overwrite</td></tr>	
+			
+		</table>
+	</div>
+<p>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3><b>Example:</b></h3>
+<p class="code">
+data_str = typeof(global.ExtensionInput);
+</p>
+<p>
+The above code gets the data type held by the given global variable and returns the string to an instance variable.
+</p>
+  
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="Data%20Types.html">Data Types</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="is_string.html">is_string</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2016 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+typeof
+-->

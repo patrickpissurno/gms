@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Android Extensions</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+
+<h1 class="studio">Android Extensions</h1>
+
+<h2 class="studio">This section details the Android tab in the Extension Package Properties</i>.</h2>
+
+<p>
+When you create a new extension for your game, you are presented with the <b>Extension Package Properties</b> window from where you can set the basic properties for the extension (see the page 
+<a href="Creating%20Extensions.html">Creating Extensions</a> for further details). If your extension is for Android, you would tick that option too, and clicking on the <b>Next</b> button will open the following tab:
+
+<img class="center" src="Extension_properties_android.png">
+
+Here you give the following details:
+
+<ul>
+	<li><b>ClassName</b>: Your extension can have multiple classes, with each class having its own functions and constants, so you should give it a name that reflects its purpose</li><br>
+</ul>
+
+<p>
+With that done, you will then need to add in any extra permissions that your extension requires. What these permissions are will depend entirely on the use that the extension has, and so you should check the 
+<a href="http://developer.android.com/reference/android/Manifest.permission.html" target="_blank">documentation supplied by Google</a> for the Android platform, or, if you are using a third party SDK, the 
+documentation that comes with the SDK. 
+<br>
+<br>
+
+You can also set any extra code to be injected (added) to the <b>Android Manifest XML</b> file when your game is built for testing or final release. Make sure to revise this (and your permissions) carefully before 
+submitting any games to the store, as incorrect settings will cause your game to be failed for submission. 
+<br>
+<br>
+
+Once you have set this up correctly, you will need to add the required files for your extension package to work. To do this you need to right click on the extension and select either <i>Add Android SDK</i> or 
+<i>Add Android Source</i> and then browse to the files you wish to add. Added files will be stored in the <i>AndroidSource</i> directory along with your extension. You can open this location at any time 
+by right clicking on the extension and selecting <i>Open Extension Directory</i>.
+<br>
+<br>
+
+<h3 class="studio">Adding Functions and Constants</h3>
+<p>
+To add your functions and constants to the extension package, you must now right click on the extension again and select <b>Add Placeholder</b>. This will create a placeholder file which "links" the functions 
+you want to add to the extension itself. Once you have added your placeholder, you can then follow the instructions given on the page <a href="Creating%20Extensions.html">Creating Extensions</a> to add the 
+functions and constants it requires. Don't forget to set the export targets for the functions by right-clicking on the placeholder and selecting <b>properties</b>.
+<br>
+<br>
+
+<h3 class="studio">Further Information</h3>
+<p>
+You can find a more detailed explanation of the exact steps necessary to create an Android Extension from the <b>YoYo Games Knowledge Base</b>: 
+<a href="http://help.yoyogames.com/entries/30690273" target= "_blank">Creating A Native Extension For Android</a>.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Extension Packages</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="iOS%20Extensions.html">iOS Extension</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+extensions Android
+-->

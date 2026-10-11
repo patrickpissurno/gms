@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>texture_set_repeat_ext</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">texture_set_repeat_ext</h1>
+
+<h2 class="studio">Indicates whether a given shader sampler texture should repeat or not.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">texture_set_repeat_ext(sampler_id, repeat);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+		
+		<tr><td>sampler_id</td>
+		<td>The sampler id from the shader.</td></tr>
+		
+		<tr><td>repeat</td>
+		<td>Indicate whether the texture should repeat (<tt>true</tt>) or not (<tt>false</tt>).</td></tr>
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function can be used to set whether a single sampler "slot" repeats the given texture when using <a href="../Shaders/index.html">Shaders</a> in <i>GameMaker: Studio</i>. Setting it to <tt>true</tt> 
+will repeat the texture if the uv coordinates are out with the 0-1 range, while a setting of <tt>false</tt> will mean no repeating.
+<br>
+<br>
+
+<i><b>NOTE: </b> This setting will be over-ridden by the value set when calling the function <a href="texture_set_repeat.html"><tt>texture_set_repeat()</tt></a></i>.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+shader_sample = shader_get_sampler_index(shader_glass, "s_NoiseSampler");<br>
+texture_set_repeat_ext(shader_sample, true);<br>
+<p>
+The above code will permit the texture to repeat of for the image used in the shader sampler.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Drawing</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="texture_set_stage.html">texture_set_stage</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+texture_set_repeat_ext
+-->

@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>buffer_get_address</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">buffer_get_address</h1>
+  
+<h2 class="studio">Get the raw, aligned, buffer address.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">buffer_get_address(buffer);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+
+	<tr><td>buffer</td>
+	<td>The index of the buffer to use.</td></tr>
+		
+</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>pointer
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+With this function you can get the a <i>pointer</i> to the raw, <i>aligned</i> buffer address. This is primarily for use with extensions as you can pass this value through to them, allowing them to access the 
+buffer data. Note that there are a few things you cannot do with the buffer when accessing from an extension:
+<ul>
+	<li>You cannot free the memory.
+	<li>You cannot resize the memory.
+	<li>You cannot not write past the buffer address plus the buffer size (you can use the <a href="buffer_get_size.html"><tt>buffer_get_size</tt></a> function for this) or you will get an out of bounds error.
+</ul>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var b_address = buffer_get_address(buff_model);<br>
+var b_end_address = b_address + buffer_get_size(buff_model);<br>
+</p>
+<p>
+The above code will get the memory address of the buffer indexed in the variable "buff_model" and then get the memory address for the end of the buffer using the <tt>buffer_get_size()</tt> function, storing 
+both values in local variables for further use. 
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Buffers</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="buffer_get_size.html">buffer_get_size</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+buffer_get_address
+--> 

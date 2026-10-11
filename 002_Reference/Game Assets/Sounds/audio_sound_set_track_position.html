@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>audio_sound_set_track_position</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">audio_sound_set_track_position</h1>
+
+<h2 class="studio">Set a time position for a sound to play from.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">audio_sound_set_track_position(index, time);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+		
+		<tr><td>index</td>
+		<td>The index of the sound to change.</td></tr>
+		
+		<tr><td>time</td>
+		<td>The time (in seconds) to set the start point to.</td></tr>
+
+	</table>
+</div>
+<p>
+<br>
+</p>
+
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function will set the position (in seconds) within the sound file for the sound to play from. The sound can either be a single instance of a sound (the index for individual sounds being played can be stored in 
+a variable when using the <a href="audio_play_sound.html"><tt>audio_play_sound</tt></a> or <a href="audio_play_sound_at.html"><tt>audio_play_sound_at</tt></a> functions) or a sound asset. If it 
+is a unique sound ID that you use, then the position will change immediately to the new time given, and if it is a resource tree asset then all further plays of the given sound will start at the new time. The function 
+will ignore any value given that is longer than the length of the sound given for the "index" value.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var snd = audio_play_sound(snd_MainTrack, 0, false);<br>
+audio_sound_set_track_position(snd, 32);<br>
+</p>
+<p>
+The above code plays a sound and then uses the returned ID value to set the start position for the sound to 32 seconds.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Audio</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="audio_sound_get_track_position.html">audio_sound_get_track_position</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+</body>
+</html>
+
+<!-- KEYWORDS
+audio_sound_set_track_position
+-->

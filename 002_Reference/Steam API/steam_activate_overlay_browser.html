@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>steam_activate_overlay_browser</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">steam_activate_overlay_browser</h1>
+  
+<h2 class="studio">Activate the Steam user interface overlay as a browser.</h2>
+  
+<h3 class="studio">Syntax:</h3>
+<p class="code">steam_activate_overlay(url);</p>
+  
+<p>
+<br>
+</p>
+ 
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+		
+		<tr><td>url</td>
+		<td>The (full) URL for the overlay to open.</td></tr>
+		
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns:</b> N/A
+</p>
+  
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+with this function you can open the Steam game overlay to its web browser and then have it load the specified URL. you need to use the <i>full</i> URL as a string for this to resolve correctly, for example: 
+"http://www.steamgames.com/".
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+if keyboard_check_pressed(vk_f1)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;steam_activate_overlay_browser("http://www.steamgames.com/");<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code polls the keyboard for the F1 key and if it is then Steam overlay will be opened and resolve to the given URL.
+</p>
+  
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Steam API</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="steam_activate_overlay_store.html">steam_activate_overlay_store</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+steam_activate_overlay_browser
+-->

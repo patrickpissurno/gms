@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>buffer_async_group_end</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">buffer_async_group_end</h1>
+  
+<h2 class="studio">Ends the definition of a buffer save group and initiates the saving.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">buffer_async_group_end();</p>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>Real
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function finishes the definition of a buffer save group. You must have previously called the function <a href="buffer_async_group_begin.html"><tt>buffer_async_group_begin()</tt></a> to initiate the 
+group, then call the function <a href="buffer_save_async.html"><tt>buffer_save_async()</tt></a> for each file that you wish to save out. Finally you call this function, which will start the saving of the files.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+buffer_async_group_begin("SaveGame");<br>
+save1 = buffer_save_async(buff1, "Player_Save1.sav", 0, 16384);<br>
+save2 = buffer_save_async(buff2, "Player_Save2.sav", 0, 16384);<br>
+save3 = buffer_save_async(buff3, "Player_Save3.sav", 0, 16384);<br>
+save4 = buffer_save_async(buff4, "Player_Save4.sav", 0, 16384);<br>
+buffer_async_group_end();<br>
+</p>
+<p>
+The above code starts a buffer group then sets it to save out 4 files asynchronously. The group definition is then ended (at which point saving will begin).
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Buffers</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="buffer_copy.html">buffer_copy</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+buffer_async_group_end
+--> 

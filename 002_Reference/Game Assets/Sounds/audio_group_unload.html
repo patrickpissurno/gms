@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>audio_group_unload</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">audio_group_unload</h1>
+
+<h2 class="studio">Unload an audio group from memory.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">audio_group_unload(groupID);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+		
+		<tr><td>groupID</td>
+		<td>The index of the audio group to unload (as defined in the <b>Global Game Settings</b> <a href="../../../001_Advanced%20Use/Global%20game%20settings/Audio%20Groups%20Tab.html">Audio Groups 
+		Tab</a>)</td></tr>
+		
+	</table>
+</div>
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>Boolean
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function will unload all the sounds that are flagged as belonging to the given Audio Group into memory. The function will return <tt>true</tt> if unloading is initiated and <tt>false</tt> if the group ID 
+is invalid, or it has already been flagged for unloading. Note that any audio currently being played when this function is called will be stopped.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+if audio_group_is_loaded(audiogroup_level1)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;audio_group_unload(audiogroup_level1);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code checks to see if an audio group has been loaded and if it has it unloads it.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="Audio%20Groups.html">Audio Groups</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="audio_group_is_loaded.html">audio_group_is_loaded</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+audio_group_unload
+-->

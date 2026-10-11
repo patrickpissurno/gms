@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>clickable_set_style</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">clickable_set_style</h1>
+  
+<h2 class="studio">Set the button style from a ds_map.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">clickable_set_style(index, map)</p>
+  
+<p>
+<br>
+</p>
+  
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+	
+	<tr><td>index</td>
+	<td>The index of the clickable icon to style.</td></tr>
+
+	<tr  class="alt"><td>map</td>
+	<td>The index of the <tt>ds_map</tt> to set the style from.</td></tr>
+	
+</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+  
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function lets you set the CSS style properties for the given button via the key/value pairs in the provided <tt>ds_map</tt>. You need to have previously created the both the button element (using 
+<a href="clickable_add.html"><tt>clickable_add()</tt></a>) and the <tt>ds_map</tt> previously and supply the stored indices as arguments.
+<br>
+<br>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var map = ds_map_create();<br>
+ds_map_add(map, "opacity", "0.5");<br>
+clickable_set_style(button, map);<br>
+ds_map_destroy();<br>
+</p>
+<p>
+The above code will change the style of the clickable button with the index stored in the variable "button".
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">HTML5</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="clickable_delete.html">clickable_delete</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!--KEYWORDS
+clickable_set_style
+-->

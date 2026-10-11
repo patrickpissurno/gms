@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>draw_get_swf_aa_level</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">draw_get_swf_aa_level</h1>
+  
+<h2 class="studio">Get the current anti-aliasing level for SWF format vector sprites.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">draw_get_swf_aa_level();</p>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>Real
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function can be used to get the anti-aliasing (AA) level for SWF format vector sprites. The return value will between 0 and 1 and shows how "smooth" the edges of these sprites will be drawn. You can set 
+the AA level using the function <a href="draw_set_swf_aa_level.html"><tt>draw_set_swf_aa_level()</tt></a>.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+if draw_get_swf_aa_level() == 0<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;draw_enable_swf_aa(true);<br>
+&nbsp;&nbsp;&nbsp;draw_set_swf_aa_level(0.5);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code will check the AA value for SWF format sprites, and if it is 0 it enables AA and sets the value to 0.5.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Drawing Sprites And Backgrounds</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="draw_skeleton.html">draw_skeleton</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+draw_get_swf_aa_level
+-->

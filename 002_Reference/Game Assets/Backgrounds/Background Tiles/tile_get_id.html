@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>tile_get_id</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">tile_get_id</h1>
+
+<h2 class="studio">Returns the unique id for the given tile index.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">tile_get_id(index);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+
+	<tr><td>index</td>
+	<td>The index of the tile to check.</td></tr>
+
+</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>Real
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+You can use this function to  get the unique tile "id" which can then be used in other functions like <tt>tile_get_xscale</tt>, <tt>tile_set_alpha()</tt>, etc... The "index" argument that the function takes is a real 
+number from 0 up to the number of tiles in the room (which you can find using the <a href="tile_get_count.html"><tt>tile_get_count()</tt></a> function) and the function will return the corresponding tile id or 
+-1 if no tile with the given index exists.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var num = tile_get_count();<br>
+for (var i = 0; i &lt; num; i++;)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;tile_set_depth(tile_get_id(i), -1000);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code will get the total number of tiles in a room, then loop through them one at a time and set their depth to -1000.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Background Tiles</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="tile_get_ids.html">tile_get_ids</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+tile_get_id
+-->

@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>iap_product_details</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">iap_product_details</h1>
+  
+<h2 class="studio">Add details of a single product to a ds_map.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">iap_product_details(product_id, ds_map);</p>
+  
+<p>
+<br>
+</p>
+  
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+
+		<tr><td>purchase_id</td>
+		<td>The product ID string for the purchase.</td></tr>
+
+		<tr class="alt"><td>ds_map</td>
+		<td>The ds_map that will store the product information.</td></tr>
+
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+  
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+With this function you can populate a previously created <a href="../Data%20Structures/DS%20Maps/index.html"><tt>ds_map</tt></a> with a number of key/value pairs that describe the given purchase. The following 
+data is returned within the map:
+<blockquote>
+	<ul>
+		<li>"<b>id</b>" - The product ID string.<br><br>
+		<li>"<b>title</b>" - The title of the product.<br><br>
+		<li>"<b>description</b>" - The description of the product.<br><br>
+		<li>"<b>price</b>" - The price of the product, where available (not all stores support this).<br><br>
+		<li>"<b>type</b>" - The type of product, which will be either "Consumable" or "Durable", where available (not all stores support this).<br><br>
+		<li>"<b>verified</b>" - Will be either <tt>true</tt> or <tt>false</tt> (ie: real numbers 0 or 1) depending on whether or not your game has received details of this product from the store and thus believes 
+		this product to be available for purchase.
+	</ul>
+</blockquote>
+
+<p>
+<i><b>NOTE: </b>The <tt>ds_map</tt> used is <b>not</b> created by the function, meaning that you must create it previously and remove it again from memory when not in use using the appropriate 
+function.</i>
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var p_map = ds_map_create();<br>
+iap_product_details(ds_map_find_value(iap_data, "index"), p_map);<br>
+p_title = " + string(ds_map_find_value(p_map, "title")));<br>
+p_description = " + string(ds_map_find_value(p_map, "description")));<br>
+ds_map_destroy(p_map);<br>
+</p>
+<p>
+The above code will create a <tt>ds_map</tt> and then populate it with the product details for the product taken from the special <tt>iap_data</tt> ds_map which is created exclusively in the 
+<b>IAP Event</b>. The "title" and "description" are then added to variables so that they can later be drawn on the screen.
+</p>
+<p>
+
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">In App Purchases</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="iap_purchase_details.html">iap_purchase_details</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!--KEYWORDS
+iap_product_details
+-->

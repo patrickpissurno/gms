@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>The Audio Groups Tab</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+
+<h1 class="studio">The Audio Groups Tab</h1>
+
+<h2 class="studio">This section deals with the audio group options of the Global Games Settings Window.</h2>
+
+<p>
+
+<img class="center" src="Audio_Tab.png"></img>
+
+Here you can add, delete and rename audio groups. GameMaker: Studio permits you to assign each of the audio resources (sound effects and music) to different audio groups to 
+try and optimise the number of sounds that are being played at any one time, as well as give you further control over volume and other things. For that to work, you need to define the necessary audio 
+groups from this tab, and then go through each of the appropriate resource types and select the group you wish it to belong to from the drop down menu. Once you have defined audio groups and assigned 
+sounds to them you can see them in the list marked <b>Audio Group Sounds List</b>.
+<blockquote>
+	<i><b>NOTE: </b>If you have a set of sounds in a folder within the Resource Tree, you can Right Click on the folder icon and select "Assign audio group" to assign all the sounds contained with the folder 
+	to a specific audio group.</i>
+</blockquote>
+
+<p>
+The "default" audio group will include the audio files in the game bundle and they will all be loaded into memory on start-up (unless flagged as "streamed" in the Audio properties), but when you create a custom audio group, the files that are added to it will <i>not</i> be loaded into memory until you call the function <a href="../../002_Reference/Game%20Assets/Sounds/audio_group_load.html"><tt>audio_group_load()</tt></a>. In this way you can control what audio is resident in memory at any time.
+<br>
+<br>
+
+Audio Groups are also linked to the <a href="../007_Configurations.html">Configurations</a> settings. When you select a configuration, you can then open the Audio Groups tab and select the export 
+targets from the right hand side for that configuration. Note that you cannot set audio resources to different groups on a configuration basis, only the export target for the given group.
+<br>
+<br>
+
+For more information on how to set a sound to a specific audio group, please see the section <a href="../../000_Using%20GameMaker/006_Sounds%20and%20music.html">Sounds and Music</a> and for 
+the functions available see the section on <a href="../../002_Reference/Game%20Assets/Sounds/index.html">Audio Functions</a>.
+<blockquote>
+	<i><b>NOTE: </b>Audio groups can only be used when working with the normal audio system, but will not work with legacy audio.</i>
+	<br>
+	<br>
+
+	<i><b>NOTE: </b>This functionality is limited to the <a href="../../000_Using%20GameMaker/Versions.html">Professional Version</a> of <i>GameMaker: Studio</i>.</i>
+</blockquote>
+
+<p>
+<br>
+</p>
+
+<p>
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Global Game Settings</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="Project%20Info%20Tab.html">The Project Info Tab</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+</body>
+</html>
+
+<!-- KEYWORDS
+audio groups
+-->

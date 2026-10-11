@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>ds_list_add</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">ds_list_add</h1>
+
+<h2 class="studio">Adds the given value (or values) to the end of the list.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">ds_list_add(id, val1 [, val2, ... val15]);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+	
+	<tr><td>id</td>
+	<td>The id of the list to add to.</td></tr>
+	
+	<tr class="alt"><td>val</td>
+	<td>The value to add to the list.</td></tr>
+	
+	<tr><td>[val2, ... val15]</td>
+	<td>Optional values to be added to the list.</td></tr>	
+
+</table>
+</div>
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function can be used to add a new value (real or string) to the list, which will be added on at the end. The function can take a further 14 optional arguments  (making a total of 15 possible additions), permitting 
+you to add multiple values consecutively to the list in a single call.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+ds_list_add(sc_list, score);
+</p>
+<p>
+The above code will add the value stored in the "score" variable into the list indexed in the variable "sc_list".
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">DS Lists</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="ds_list_set.html">ds_list_set</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!--KEYWORDS
+ds_list_add
+-->

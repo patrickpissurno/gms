@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>surface_getpixel_ext</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">surface_getpixel_ext</h1>
+
+<h2 class="studio">Returns the full 32bit value for the pixel at a given coordinate on a surface.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">surface_getpixel_ext(surface_id, x, y);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+
+		<tr><td>surface_id</td>
+		<td>The ID of the surface to use.</td></tr>
+		
+		<tr class="alt"><td>x</td>
+		<td>The x coordinate of the pixel to check</td></tr>
+		
+		<tr><td>y</td>
+		<td>The y coordinate of the pixel to check</td></tr>
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>Real
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+With this function you can get the full <b>abgr 32bit</b> value of any pixel of a (previously created) surface.
+<br>
+<br>
+
+<i><b>NOTE: </b>This function is slow and so should only be used when absolutely necessary.</i>
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+col = surface_getpixel_ext(mouse_x, mouse_y);<br>
+alpha = (col >> 24) &amp; 255;<br>
+blue = (col >> 16) &amp; 255;<br>
+green = (col >> 8) &amp; 255;<br>
+red = col &amp; 255;<br>
+</p>
+<p>
+The above code will get the 32bit colour value at the position of the mouse and then split it into its component values, storing them in variables. 
+</p>
+  
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Surfaces</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="surface_free.html">surface_free</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+surface_getpixel_ext
+-->

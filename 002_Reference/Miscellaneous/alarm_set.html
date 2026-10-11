@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>alarm_set</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+ <h1 class="studio">alarm_set</h1>
+  
+<h2 class="studio">Set an alarm to the given value.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">alarm_set(index, value);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+
+	<tr><td>index</td>
+	<td>The alarm index to set, from 0 to 11.</td></tr>
+	
+	<tr class="alt"><td>value</td>
+	<td>The value (an integer) to set the alarm to.</td></tr>
+	
+</table>
+</div>
+<p>
+<br>
+</p>
+
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function can be used to set an alarm. You supply the alarm number from 0 to 11, and then the value to set the alarm to. The value must be an integer value, and you can set it to -1 to stop the alarm. This is an alternative method to setting the <a href="../Objects%20and%20Instances/Instances/Instance%20Properties/alarm.html">alarm array</a> directly.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+for (var i = 0; i &lt; 12; i++)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;if alarm_get(i) &gt; 0 alarm_set(i, -1);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code checks all the alarms in the calling instance and if they are greater than 0 it sets them to -1, stopping them from counting down any further.
+</p>
+  
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Miscellaneous</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="alarm_get.html">alarm_get</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!--KEYWORDS
+alarm_set
+-->

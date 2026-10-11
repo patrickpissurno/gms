@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>tile_get_ids_at_depth</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">tile_get_ids_at_depth</h1>
+
+<h2 class="studio">Returns an array containing the unique ID values for all tiles at a given depth.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">tile_get_ids_at_depth(depth);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+
+	<tr><td>depth</td>
+	<td>The depth of the tile layer to get the IDs of.</td></tr>
+
+</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>Array
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+You can use this function to get the unique tile "id" for all tiles placed at a given depth. The function will return a 1D array, with each entry being the ID value for a single tile.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var tiles = tile_get_ids_at_depth(1000);<br>
+for (var i = 0; i &lt; array_length_1d(tiles); i++;)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;tile_set_alpha(tiles[i], 0.5);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code will get the total number of tiles on the layer at depth 1000, then loop through them one at a time and set their alpha to 0.5.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Background Tiles</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="tile_get_background.html">tile_get_background</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+tile_get_ids_at_depth
+-->

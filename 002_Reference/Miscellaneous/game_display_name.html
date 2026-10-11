@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>game_display_name</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">game_display_name</h1>
+  
+<h2 class="studio">Returns the game name string as defined in the Global Game Settings.</h2>
+  
+<h3 class="studio">Syntax:</h3>
+<p class="code">game_display_name</p>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>String
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This <b>read only</b> variable returns the display name of your game for the target platform, as set in the <a href="../../001_Advanced%20Use/Global%20game%20settings/index.html">Global Game Settings</a>.
+<blockquote>
+	<i><b>NOTE: </b>This is a Pro version only variable, and on the regular version it will always return "Made With GameMaker: Studio".</i>
+</blockquote>
+
+<p>
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio"> <b>Example:</b> </h3>
+<p class="code">
+var name = game_display_name;<br>
+var ver = string(GM_version);<br>
+draw_text(32, 32, name + ":" + ver);<br>
+</p>
+<p>
+The above code gets the display name and the version number of the game and draws them.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Miscellaneous</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="game_project_name.html">game_project_name</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+game_display_name
+--> 

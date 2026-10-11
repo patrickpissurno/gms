@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>skeleton_animation_list</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">skeleton_animation_list</h1>
+
+<h2 class="studio">Populate a DS list with the names for all animations included in the sprite.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">skeleton_animation_list(sprite, list);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+
+		<tr><th>Argument</th><th>Description</th></tr>
+		
+		<tr><td>sprite</td>
+		<td>The sprite index of the Spine skeletal animation to get the list from.</td></tr>
+		
+		<tr class="alt"><td>list</td>
+		<td>The ID of the DS list to populate with the animation names.</td></tr>
+		
+		
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+With this function you can populate a (pre-created) <a href="../../../Data%20Structures/DS%20Lists/index.html"><tt>ds_list</tt></a> with all the names of the animations included as part of the skeletal animation sprite. The names will be strings and can then be used in the other animation functions for these types of sprite.
+<blockquote>
+<i><b>IMPORTANT: </b>Spine integration in GameMaker: Studio is a Pro licence feature and will not work in the Free/Standard versions.</i>
+</blockquote>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var list = ds_list_create();<br>
+skeleton_animation_list(sprite_index, list);<br>
+for (var i = 1; i &lt; ds_list_size(list); i++;)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;skeleton_animation_mix(list[| 0], list[| i], 0.5);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+ds_list_destroy(list);<br>
+</p>
+<p>
+The above code creates a <tt>ds_list</tt> of all the animation names for the sprite being used by the instance. It then loops through these and sets the mix value for all of them with the first animation to 0.5.
+</p>
+  
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Skeletal Animations</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="skeleton_animation_clear.html">skeleton_animation_clear</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+skeleton_animation_list
+-->

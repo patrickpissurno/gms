@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<title>ds_map_secure_save_buffer</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">ds_map_secure_save_buffer</h1>
+  
+
+<p>
+  
+<h3><b>Syntax:</b> </h3>
+<p class="code">ds_map_secure_save_buffer(filename);<p>
+  
+<p>
+<br>
+<p>
+  
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+		
+		<tr><td>id</td>
+		<td>The DS map ID value.</td></tr>
+		
+		<tr class="alt"><td>buffer</td>
+		<td>The buffer ID value.</td></tr>
+		
+	</table>
+</div>
+
+<p>
+<br>
+<p>
+  
+<p>
+<b>Returns:</b> Ds_map Index
+<p>
+  
+<p>
+<br>
+<p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function will save a previously created DS map to a buffer. You supply the DS map ID value (as returned by the function <a href="ds_map_create.html"><tt>ds_map_create</tt></a>) and the ID of the buffer to write to (as returned by the function <a href="../../Buffers/buffer_create.html"><tt>buffer_create</tt></a>).
+<br>
+
+<p>
+<br>
+<p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+buff = buffer_create(128,buffer_grow,4);<br>
+var map = ds_map_create();<br>
+ds_map_add(map,"bob","ajob");<br>
+ds_map_add(map,"money",10);<br>
+ds_map_secure_save_buffer(map, buff);<br>
+ds_map_destroy(map);<br>
+<p>
+
+<p>
+The above code will create a buffer and a DS map, then populate the map with some values and write it to the buffer before deleting the map.
+<p>
+  
+<p>
+<br>
+<p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">DS Maps</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="ds_map_secure_load.html">ds_map_secure_load</a>
+	</div>
+</div>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!--KEYWORDS
+ds_map_secure_save_buffer
+-->

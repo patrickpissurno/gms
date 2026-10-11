@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>audio_get_listener_info</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">audio_get_listener_info</h1>
+
+<h2 class="studio">Returns a ds_map with information about the listener.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">audio_get_listener_info(num);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+
+		<tr><td>num</td>
+		<td>The listener number to get the data for.</td></tr>
+		
+	</table>
+</div>
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>ds_map
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function will create a <tt>ds_map</tt> and populate it with information for the given listener. 
+
+<blockquote>
+	<i><b>NOTE: </b>You are responsible for the destruction of the returned <tt>ds_map</tt> using the appropriate function.</i>
+</blockquote>
+
+<p>
+The <tt>ds_map</tt> will contain the following keys:
+<blockquote>
+	<ol>
+		<li>"name" - The name of the listener, as a string, with "default" being the standard listener name on most target platforms
+		<li>"mask" - The bit-mask for the listener
+		<li>"index" - The unique index value of the listener
+	</ul>
+</blockquote>
+
+<p>
+The mask value can be used to set a sound or emitter to play from multiple listeners at once, simply using the bitwise <tt>or</tt> "|" to generate a mask for the sound (see the example code below), while the index 
+is used to set the properties like position or velocity for a given listener using functions like <a href="audio_listener_set_position.html"><tt>audio_listener_set_position()</tt></a>.
+<br>
+<br>
+
+<p>
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var num = audio_get_listener_count();<br>
+var mask = 0;
+for(var i = 0; i &lt; num; ++i;)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;var info = audio_get_listener_info(i);<br>
+&nbsp;&nbsp;&nbsp;var m = audio_listener_get_data(info[? "mask"]);<br>
+&nbsp;&nbsp;&nbsp;mask = mask | m;<br>
+&nbsp;&nbsp;&nbsp;ds_map_destroy(info);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+audio_set_listener_mask(mask);<br>
+</p>
+<p>
+The above code checks the number of listeners available then loops through them gets their mask bits, which are then combined to create a single bit mask which is applied to the global listener.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="Audio%20Listeners.html">Audio Listeners</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="audio_set_listener_mask.html">audio_set_listener_mask</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+audio_get_listener_info
+-->

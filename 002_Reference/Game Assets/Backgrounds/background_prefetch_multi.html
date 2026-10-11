@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<title>background_prefetch_multi</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9">
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">background_prefetch_multi</h1>
+
+<h2 class="studio">Fetch multiple texture pages for a number of background assets.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">background_prefetch_multi(array);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+	
+		<tr><td>array</td>
+		<td>Array with the background indices to fetch</td></tr>
+	
+</table>
+</div>
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+	This function can be used to prefetch (place into texture memory) a number of texture pages that contain the background given. You supply an array populated with the background indices (as defined when you created the background asset) and the texture pages that they are on will be loaded into memory.
+<br>
+<br>
+
+	<blockquote>
+		<i><b>NOTE</b>: There is a performance hit as the texture is uploaded to texture memory on most devices, so it's recommended that you call <tt>background_preftech_multi</tt> on any required graphics at the start of a level to avoid any stalls.</i>
+	</blockquote>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+bck_a[0] = bck_Trees;<br>
+bck_a[1] = bck_Clouds;<br>
+bck_a[2] = bck_Mountains;<br>
+bck_a[3] = bck_Tileset;<br>
+background_prefetch_multi(bck_a);<br>
+</p>
+<p>
+	The above code creates an array where each element holds a background index. This array is then used to place those background textures into memory.
+</p>
+  
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Sprites</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="background_exists.html">background_exists</a>
+	</div>
+</div>
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+background_prefetch_multi
+-->
+

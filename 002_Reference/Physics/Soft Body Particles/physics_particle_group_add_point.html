@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>physics_particle_group_add_point</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">physics_particle_group_add_point</h1>
+  
+<h2 class="studio">Set the points of the polygon shape which will be used to create a group of soft body particles.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">physics_particle_group_add_point(x, y)</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+		
+		<tr><td>x</td>
+		<td>The x position in the room for the point.</td></tr>
+		
+		<tr class="alt"><td>y</td>
+		<td>The y position in the room for the point.</td></tr>
+
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function sets a point in the room to define the shape of a polygon which will be used to create a group of soft body particles. You must have previously signalled to <i>GameMaker: Studio</i> that you are going 
+define a polygon shape using the function <a href="physics_particle_group_polygon.html">physics_particle_group_polygon()</tt></a> and then use this function to define the individual points of the polygon. You 
+must give at least three points when defining the polygon shape, but can give up to eight, and the function will permit the definition of concave polygons. However, if you generate a polygon with any cavities, the points 
+within will be ignored and a convex shape will be created for the particle group.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile;<br>
+var groupflags = phy_particle_group_flag_solid;<br>
+physics_particle_group_begin(flags, groupflags, mouse_x, mouse_y, 0, 0, 0, 0, c_white, 1, 1, 2);<br>
+physics_particle_group_polygon();<br>
+physics_particle_group_add_point(200, 200);<br>
+physics_particle_group_add_point(300, 300);<br>
+physics_particle_group_add_point(100, 300);<br>
+mLastGroup = physics_particle_group_end();<br>
+</p>
+<p>
+The above code stores the flags for the particle type and the particle group properties in variables then uses these to create a polygon particle group of three sides at the mouse position.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Soft Body Particles</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="physics_particle_group_end.html">physics_particle_group_end</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+physics_particle_group_add_point
+--> 

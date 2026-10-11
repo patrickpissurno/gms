@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>skeleton_skin_get</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">skeleton_skin_get</h1>
+
+<h2 class="studio">Get the name of the skin that the skeletal animation sprite is being drawn with.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">skeleton_skin_get();</p>
+
+<p>
+<br>
+</p>
+ 
+<p>
+<b>Returns: </b>String
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+With skeletal animation sprites, you can assign separate textures (called "skins") to the animation, thereby using one animation for multiple different things. This function will return the name of the skin (as a string) 
+that is currently assigned to the skeletal animation sprite your instance is using. The name returned is that which you set when you created the sprite in your animation program.
+<blockquote>
+<i><b>IMPORTANT: </b>Spine integration in GameMaker: Studio is a Pro licence feature and will not work in the Free/Standard versions.</i>
+</blockquote>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+if skeleton_skin_get() == "skin_Enemy1"<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;skeleton_skin_set(choose("skin_Enemy1", "skin_Enemy2", "skin_Enemy3");<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code would check the currently assigned skin for the animation and if it is "skin_Enemy1", it chooses and sets a new skin from one of three options.
+</p>
+  
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Skeletal Animations</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="skeleton_skin_set.html">skeleton_skin_set</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+skeleton_skin_get
+-->

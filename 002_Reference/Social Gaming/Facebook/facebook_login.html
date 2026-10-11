@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>facebook_login</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">facebook_login</h1>
+  
+<h2 class="studio">Logs the user into their Facebook account.</h2>
+
+<h3><b>Syntax:</b></h3> 
+<p class="code">facebook_login(permissions, ios_login_type)</p>
+
+<p>
+<br>
+</p>
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+
+	<tr><td>permissions</td>
+	<td>The permissions you want to have from the user logging in.</td></tr>
+	
+	<tr class="alt"><td>ios_login_type</td>
+	<td>The iOS only log in type (see the list of <b>constants</b> below).</td></tr>
+	
+</table>
+</div>
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+With this function <i>GameMaker: Studio</i> will connect to Facebook and ask the user to log into their account. You may also supply additional permission requests in the form of a ds_list that this function 
+then converts into a <tt>json</tt> array to communicate them to Facebook. There are a wide variety of permissions you may request and they are documented on the Facebook developers pages found 
+<a href="https://developers.facebook.com/docs/reference/login/" target="_blank"> here</a>. If you do not wish to ask for any special or extended permissions then you will still need to send 
+a ds_list, but this time it will be empty.
+<br>
+<br>
+
+This function is also considered as being <i>asynchronous</i> as while the Facebook login window is open on the screen, the game will continue to run in the background and even once the user has completed 
+the login process, none of the other Facebook functions will work until the <a href="facebook_status.html"><tt>facebook_status()</tt></a> returns "AUTHORISED" . Due to the need for an internet connection 
+and the different rates of data transfer, this means that it could be several seconds before this authorisation is received, and all the while the game will still be running.
+<blockquote>
+	<i><b>NOTE: </b>You can now only in <b>read</b> permissions to this function. If you require write permissions, you need to call <a href="facebook_request_publish_permissions.html">
+	<tt>facebook_request_publish_permissions()</tt></a> after logging in. Also note that if your game requests for more than than the <b>public_profile</b>, <b>email</b> and <b>user_friends</b> it will 
+	require review by Facebook before it can be used by people other than the game's developers.</i>
+</blockquote>
+
+<p>
+There is an extra parameter required for iOS login (other platforms can simply use <tt>fb_login_default</tt> for the argument). This should be one of the 
+constants listed below:
+
+<div class="compat">
+	<table>
+		<tr><th>Constant</th><th>Description</th></tr>
+		
+		<tr>					<td>fb_login_default</td>							<td>Use the default iOS login behaviour (see <a href="https://developers.facebook.com/docs/facebook-login/ios/v2.1" target="_blank">here</a> for further details).</td></tr>
+		
+		<tr class="alt">	<td>fb_login_fallback_to_webview</td>		<td>Attempt Facebook login, asking user for credentials if necessary.</td></tr>
+		
+		<tr>					<td>fb_login_no_fallback_to_webview</td>	<td>Attempt Facebook login, but no direct request for credentials will be made.</td></tr>
+		
+		<tr class="alt">	<td>fb_login_forcing_webview</td>			<td>Only attempt WebView login, asking user for credentials</td></tr>
+		
+		<tr>					<td>fb_login_use_system_account</td>		<td>Attempt Facebook login, preferring the system account and falling back to a fast app switch if necessary.</td></tr>
+		
+		<tr class="alt">	<td>fb_login_forcing_safari</td>				<td>Attempt only to login with Safari.</td></tr>
+
+	</table>
+</div>
+
+<p>
+<br>
+<br>
+The above listed constants change the login behaviour on iOS, permitting you to select which fallback methods to use (if any) should login fail from through the normal process. For further information please
+see this <a href="https://developers.facebook.com/docs/reference/ios/3.0/class/FBSession">Facebook Developer page</a>.
+<br>
+<br>
+
+<p>
+<br>
+<br>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+facebook_init();<br>
+var permissions = ds_list_create();<br>
+ds_list_add(permissions,"public_profile", "user_friends");<br>
+facebook_login(permissions, fb_login_default);<br>
+ds_list_destroy(permissions);<br>
+</p>
+<p>
+The above code will initialize Facebook and then log the current user in, asking for the extended read permissions given.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Facebook</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="facebook_request_publish_permissions.html">facebook_request_publish_permissions</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!--KEYWORDS
+facebook_login
+-->

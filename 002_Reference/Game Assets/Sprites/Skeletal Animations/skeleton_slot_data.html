@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>skeleton_slot_data</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">skeleton_slot_data</h1>
+
+<h2 class="studio">Populate a DS list with a series of DS maps containing information about each available attachment slot.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">skeleton_slot_data(sprite, list);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+
+		<tr><th>Argument</th><th>Description</th></tr>
+		
+		<tr><td>sprite</td>
+		<td>The sprite index of the Spine skeletal animation to get the data from.</td></tr>
+		
+		<tr class="alt"><td>list</td>
+		<td>The ID of the DS list to populate with the DS maps.</td></tr>
+			
+	</table>
+</div>
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+With this function you can populate a (pre-created) <a href="../../../Data%20Structures/DS%20Lists/index.html"><tt>ds_list</tt></a> with data for each of the available attachment slots that an animation contains. 
+This data is returned in the forum of a <a href="../../../Data%20Structures/DS%20Maps/index.html"><tt>ds_map</tt></a> which contains the following key/value pairs:
+
+<blockquote>
+	<ul>
+		<li><b>"name":</b> The name of the slot.<br><br>
+
+		<li><b>"bone":</b> The name of the bone.<br><br>
+
+		<li><b>"attachment":</b> The name of the attachment if one is used or "(none)" if there isn't one assigned.<br><br>
+	</ul>
+</blockquote>
+
+<p>
+The values for each key will be strings and can then be used in the other skeleton attachment functions for these types of sprite. Note that the <tt>ds_map</tt> created are <i>not</i> destroyed so you will need 
+to loop through the <tt>ds_list</tt> and destroy each of the created maps yourself.
+<blockquote>
+<i><b>IMPORTANT: </b>Spine integration in GameMaker: Studio is a Pro licence feature and will not work in the Free/Standard versions.</i>
+</blockquote>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var list = ds_list_create();<br>
+var open = true;<br>
+slot_name = "";<br>
+skeleton_slot_data(sprite_index, list);<br>
+for (var i = 0; i &lt; ds_list_size(list); i++;)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;var map = list[| i];<br>
+&nbsp;&nbsp;&nbsp;if open<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if map[? "attachment"] == "(none)"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;open = false;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;slot_name  = map[? "name"];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;ds_map_destroy(map);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+ds_list_destroy(list);<br>
+</p>
+<p>
+The above code creates a DS list and then populates it with the slot data for the instance sprite. This data is then parsed to extract the individual DS maps with the slot data. This is then checked to see if there is an 
+empty slot, and if so the variable "slot_name" is assigned the empty slot name before the DS map is destroyed. Finally we destroy the DS list as it is no longer required.
+</p>
+  
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Skeletal Animations</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="skeleton_collision_draw_set.html">skeleton_collision_draw_set</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+skeleton_slot_data
+-->

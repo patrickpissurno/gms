@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>physics_particle_delete_region_box</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">physics_particle_delete_region_box</h1>
+  
+<h2 class="studio">Delete all particles from a rectangular area within the physics simulation.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">physics_particle_delete_region_box(x, y, halfWidth, halfHeight)</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+		
+		<tr><td>x</td>
+		<td>The x position of the center of the area to delete.</td></tr>
+
+		<tr class="alt"><td>y</td>
+		<td>The y position of the center of the area to delete.</td></tr>
+		
+		<tr><td>halfWidth</td>
+		<td>The <i>half</i> width of the rectangle.</td></tr>
+		
+		<tr class="alt"><td>halfHeight</td>
+		<td>The <i>half</i> height of the rectangle.</td></tr>
+		
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+With this function you can delete (remove) all the particles that fall within the bounds of the defined rectangular area from the physics simulation in the current room. The function takes the x and y position for the 
+center of the area to delete as well as the half width and height of the rectangle (in pixels) which defines the area.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+physics_particle_delete_region_box(mouse_x, mouse_y, 32, 32);
+</p>
+<p>
+The above code will delete all particles found in a rectangular area around the mouse position.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Soft Body Particles</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="physics_particle_delete_region_poly.html">physics_particle_delete_region_poly</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+physics_particle_delete_region_box
+--> 

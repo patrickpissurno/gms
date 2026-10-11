@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>achievement_load_progress</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">achievement_load_progress</h1>
+  
+<h2 class="studio">Get achievement data from the service provider.</h2>
+
+<h3><b>Syntax:</b></h3> 
+<p class="code">achievement_load_progress()</p>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b> N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function will send a request to the server for information on all available achievements. It will trigger a callback <a href="../../../001_Advanced%20Use/More%20About%20Async%20Events/Social.html"> 
+Social Asynchronous Event</a> which contains the <tt>async_load</tt> map populated with the relevant key/value pairs. The <i>id</i> key of this <tt>ds_map</tt> is used to identify the correct 
+callback (there can be more than one trigger function for any given asynchronous event), and will be paired with the <b>constant</b> <tt>achievement_achievement_info</tt> as well as a 
+number of other key/value pairs for each player. The exact contents of the map are shown below:
+<blockquote>
+	<ol>
+		<li>"<b>id</b>" - For this function it should be <tt>achievement_achievement_info</tt>.<br><br>
+		<li>"<b>numentries</b>" - The number of achievements in the list.<br><br> 
+		<li>"<b>AchN</b>" - The name of the achievement, where "N" is an integer value corresponding to its place in the entries list. <br><br>
+		<li>"<b>AchCompN</b>" - How complete the achievement "N" is as a percentage value from 0 to 100 (a string). 
+	</ol>
+</blockquote>	
+
+<p>
+<i><b>NOTE: </b>This function is for <b>iOS</b> only.</i>
+<br>
+<br>
+
+<p>
+<br>
+</p>
+   
+<h3 class="studio">Extended Example:</h3>
+<p>
+The following code would request achievement progress when the user is on an iOS device:
+<p class="code">
+if os_type == os_ios<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;achievement_load_progress();<br>
+&nbsp;&nbsp;&nbsp;}<br>
+<p>
+This will send off a request for the information on achievements and generate an asynchronous callback with the special <tt>async_load</tt> ds_map containing the following data:
+<p class="code">
+var ident = ds_map_find_value(async_load, "id");<br>
+if ident == achievement_achievement_info<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;var numentries = ds_map_find_value(async_load, "numentries");<br>
+&nbsp;&nbsp;&nbsp;for(var i = 0; i &lt; numentries; i++;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ach_id[i] = ds_map_find_value(async_load, "Ach" + string(i));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comp[i] = ds_map_find_value(async_load, "AchComp" + string(i)); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code checks the returned <tt>ds_map</tt> in the <b>Social Asynchronous Event</b> and if its "id" matches the constant being checked, it then loops through the entries in the map for each of the 
+achievements and stores their name and completion percentage.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Achievements and Leaderboards</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="achievement_send_challenge.html">achievement_send_challenge</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!--KEYWORDS
+achievement_load_progress
+achievement_achievement_info
+-->

@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>audio_listener_get_data</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">audio_listener_get_data</h1>
+
+<h2 class="studio">Returns a ds_map with position, velocity and orientation data for the given listener.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">audio_listener_get_data(index);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+
+	<tr><td>index</td>
+	<td>The listener to get the data for (default 0).</td></tr>
+	
+</table>
+</div>
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>ds_map
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function will create a <tt>ds_map</tt> and populate it with the position, velocity and orientation values for the given listener. The default listener index is 0, but you can use the function 
+<a href="audio_get_listener_info.html"><tt>audio_get_listener_info</tt></a> to get the different indices available for the target platform. If you provide an incorrect listener index then the function 
+will return -1.
+
+<blockquote>
+	<i><b>NOTE: </b>You are responsible for the destruction of the returned <tt>ds_map</tt> using the appropriate function.</i>
+</blockquote>
+
+<p>
+The <tt>ds_map</tt> will contain the following keys:
+<blockquote>
+	<ol>
+		<li>"x" - The x position of the listener
+		<li>"y" - The y position of the listener
+		<li>"z" - The z position of the listener
+		<li>"vx" - The x axis velocity of the listener
+		<li>"vy" - The y axis velocity of the listener
+		<li>"vz" - The z axis velocity of the listener
+		<li>"lookat_x" - The x component of the look at vector of the listener
+		<li>"lookat_y" - The y component of the look at vector of the listener
+		<li>"lookat_z" - The z component of the look at vector of the listener
+		<li>"up_x" - The x component of the up vector of the listener
+		<li>"up_y" - The y component of the up vector of the listener
+		<li>"up_z" - The z component of the up vector of the listener
+	</ul>
+</blockquote>
+
+<p>
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var num = audio_get_listener_count();<br>
+for(var i = 0; i &lt; num; ++i;)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;var info = audio_get_listener_info(i);<br>
+&nbsp;&nbsp;&nbsp;var data = audio_listener_get_data(info[? "index"]);<br>
+&nbsp;&nbsp;&nbsp;if data[? "x"] != 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;audio_listener_set_position(info[? "index"], 0, 0, 0);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;ds_map_destroy(info);<br>
+&nbsp;&nbsp;&nbsp;ds_map_destroy(data);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code checks the number of listeners available then loops through them and if their x position is not 0, it sets their position to 0, 0, 0.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="Audio%20Listeners.html">Audio Listeners</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="audio_listener_set_position.html">audio_listener_set_position</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+audio_listener_get_data
+-->

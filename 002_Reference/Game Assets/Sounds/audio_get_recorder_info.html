@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>audio_get_recorder_info</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">audio_get_recorder_info</h1>
+
+<h2 class="studio">Returns a <tt>ds_map</tt> containing information about the indexed recording device.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">audio_get_recorder_info(recorder_index);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+	
+	<tr><td>recorder_index</td>
+	<td>The index of the recorder source to get the information from.</td></tr>
+	
+</table>
+</div>
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>ds_map
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function will return a <tt>ds_map</tt> with information about the given recorder source index. You can find out how many recorder sources are available using the function 
+<a href="audio_get_recorder_count.html"><tt>audio_get_recorder_count</tt></a>, and the map returned will contain the following key/value pairs:
+
+<ul>
+	<li>"name" - a name to describe the device
+	
+	<li>"index" - the index to be used to record
+	
+	<li>"data_format" - the format data will be returned in (this is currently always <tt>buffer_s16</tt> but other formats may be supported in the future)
+	
+	<li>"sample_rate" - the sample rate (in Hz) of the data returned (currently clamped to 16000hz but this may change in future)
+	
+	<li>"channels" - the constant <tt>audio_mono</tt> (further constants for stereo and 3D may be supported in the future)
+	
+</ul>
+
+<p>
+note that while the function creates a <tt>ds_map</tt> for you, it does <i>not</i> remove it again later and so you should be destroying the map yourself when it is no longer needed to prevent 
+any memory leaks.
+<blockquote>
+	<i><b>NOTE: </b>Most platforms support recording audio in some form, but that does not mean that all devices will permit it, even if the platform does, so you should always check that the <a href="audio_get_recorder_count.html"><tt>audio_get_recorder_count()</tt></a> function returns a value greater than 0 to verify that recording devices are available before using the rest of the recording functions.
+</blockquote>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+len = async_load[? "data_len"];<br>
+audio_buff = buffer_create(len, buffer_fast, 1);<br>
+buffer_copy(async_load[? "buffer_id"], 0, len, buff, 0);<br>
+audio_queue_sound(audio_queue, audio_buff, 0, len);<br>
+audio_play_sound(audio_queue, 10, 0);<br>
+</p>
+<p>
+The above code would be called in the asynchronous <a href="../../../001_Advanced%20Use/More%20About%20Async%20Events/Audio%20Recording.html">Audio Recording</a> event and assigns some recorded data to a buffer, 
+which is then added to an audio queue. This is then played.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="Audio%20Buffers.html">Audio Buffers</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="audio_system.html">audio_system</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+audio_get_recorder_info
+-->

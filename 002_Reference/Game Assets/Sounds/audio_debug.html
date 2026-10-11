@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>audio_debug</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">audio_debug</h1>
+
+<h2 class="studio">Enable or disable the audio debug overlay.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">audio_debug(enable);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+	
+	<tr><td>enable</td>
+	<td>Enable (set to <tt>true</tt>) or disable (<tt>false</tt>)  audio debugging.</td></tr>
+
+</table>
+</div>
+<p>
+<br>
+</p>
+
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function can be used to display debug information about the audio system, with <tt>true</tt> switching it on and <tt>false</tt> to switch it off. When you are debugging audio in this way, the overlay 
+will show the following information:
+
+<img class="center" src="Audio_Debug.png"></img>
+
+<blockquote>
+	<ol>
+		<li>Handle - The OpenAL source handle (unique for every sound played)</li>
+		<li>Data Handle -  The OpenAL buffer handle (shows the same value for multiple sounds with the same source handle)</li>
+		<li>Processed Buffers - how many buffers have been played</li>
+		<li>Queued Buffers - how many buffers have been queued (and are still waiting to play)</li>
+		<li>Gain -  The gain value for the audio (0 - 65536)</li>
+		<li>Play Offset - the sample position (current play position) into the current buffer</li>
+		<li>Queued Buffers Bars - a small box diagram of the processed/queued buffers with the play offset (current position) drawn as a blue line</li>
+	<ol>
+</blockquote>
+
+<p>
+For synchronised groups of audio, you also have the function <a href="audio_sync_group_debug.html"><tt>audio_sync_group_debug()</tt></a>.
+<blockquote>
+	<b><i>NOTE: </b>This function does not work on the HTML5 target platform.</i>
+</blockquote>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+if (debug_mode)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;audio_debug(true);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+else<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;audio_debug(false);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+<br>
+</p>
+<p>
+The above code will switch on or off the audio debug overlay depending on whether the game is running in debug mode or not.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Sound</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="audio_exists.html">audio_exists</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+audio_debug
+-->

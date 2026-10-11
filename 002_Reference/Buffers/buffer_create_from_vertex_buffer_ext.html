@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>buffer_create_from_vertex_buffer_ext</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">buffer_create_from_vertex_buffer_ext</h1>
+  
+<h2 class="studio">Create a new buffer using data from a vertex buffer, specifying the number of vertices in the buffer to use.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">buffer_create_from_vertex_buffer_ext(vertex_buffer, type, alignment, start_vertex, num_vertices)</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+
+	<tr><td>vertex_buffer</td>
+	<td>The vertex buffer index to use.</td></tr>
+	
+	<tr class="alt"><td>type</td>
+	<td>The type of buffer to create (see the constants list below).</td></tr>
+	
+	<tr><td>alignment</td>
+	<td>The byte alignment for the buffer</td></tr>
+
+	<tr class="alt"><td>start_vertex</td>
+	<td>The starting vertex.</td></tr>
+	
+	<tr><td>num_vertices</td>
+	<td>The total number of vertices to copy.</td></tr>
+	
+</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>Real
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+You use this function to allocate a portion of memory as a buffer in your game filled with the data from a previously created <a href="../Shaders/Primitive%20Building/index.html">vertex buffer</a>. The function 
+returns a unique <i>buffer id</i> that should be stored in a variable and used for all further function calls to the buffer. The function takes the id for the vertex buffer to use (as returned by the function 
+<a href="../Shaders/Primitive%20Building/vertex_create_buffer.html"><tt>vertex_create_buffer()</tt></a>, for example) with the following constants being used to define the buffer type:
+<br>
+<br>
+
+<div class="compat">
+	<table>
+		<tr><th>Constant</th><th>Description</th></tr>
+		<tr><td>buffer_fixed</td><td>A buffer of fixed size.</td></tr>
+		<tr class="alt"><td>buffer_grow</td><td>A buffer that will "grow" dynamically as data is added</td></tr>
+		<tr><td>buffer_wrap</td><td>A buffer where the data will "wrap". When the data being added reaches the limit of the buffer size, the overwrite will be placed back at the start 
+		of the buffer, and further writing will continue from that point.</td></tr>
+		<tr class="alt"><td>buffer_fast</td><td>Special "stripped" buffer that is extremely fast to read/write to. Can only be used with <tt>buffer_u8</tt> 
+		<a href="buffer_read.html">data types</a>, and <i>must</i> be 1 byte aligned.</td></tr>
+		<tr><td>buffer_vbuffer</td><td> 
+	</table>
+</div>
+
+<p>
+<br>
+<br>
+Apart from the buffer type, you will also have to set the <i>byte alignment</i> for the buffer. This value will vary depending on the data that you wish to store in the buffer, and in most cases a value of 1 is 
+perfectly fine. However, be aware that for some operations a specific alignment is <i>essential</i>, and an incorrect alignment may cause errors (for further details on alignment see <a href="index.html">
+Buffers</a>). The following is a general guide to show which values are most appropriate for each data type (when in doubt, use an alignment of 1):
+
+<blockquote>
+	<ul>
+		<li>Strings should be aligned to 1 byte.
+		<li>Signed or unsigned 8bit integers can be aligned to any value, but note that for a fast buffer (see <a href="buffer_write.html"><tt>buffer_write</tt></a>) it <i>must</i> be aligned to 1.
+		<li>Signed or unsigned 16bit integers should be aligned to 2 bytes.
+		<li>Signed or unsigned 32bit integers should be aligned to 4 bytes
+		<li>Floats of up to 16bits should be aligned to 2 bytes. <i>(Not currently supported!)</i>
+		<li>Floats of up to 32bits should be aligned to 4 bytes.
+		<li>Floats of up to 64bits should be aligned to 8 bytes.
+	</ul>
+</blockquote>
+
+<p>
+<i><b>NOTE: </b>Vertex buffers are 1 byte aligned, but you can create the buffer with any alignment depending on how you want to treat the data, as the vertex data is simply a raw memory copy into the buffer.</i>
+<br>
+<br>
+
+The final two arguments are used to specify the range of vertex data that you wish to copy into the newly created buffer. The start vertex can be anywhere between 0 and the number of vertices -1, and then you 
+give the number of vertices from that point to copy. You can use the function <a href="../Shaders/Primitive%20Building/vertex_get_number.html"><tt>vertex_get_number()</tt></a> on the vertex buffer to get the 
+total number of vertices stored.
+<br>
+<br>
+
+<i><b>NOTE: </b> It's important that you remove any dynamically created resources like this from memory when you no longer need them to prevent memory leaks, so when you are finished with the buffer 
+that you have created you should free it up again using <a href="buffer_delete.html"><tt>buffer_delete</tt></a>. Also note that the vertex buffer used to create the new buffer is not removed from memory 
+either and you should use the function <a href="../Shaders/Primitive%20Building/vertex_delete_buffer.html"><tt>vertex_delete_buffer()</tt></a> when it is no longer required.</i>
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var v_num = vertex_get_number(model_buff);
+player_buffer = buffer_create_from_vertex_buffer(model_buffer, buffer_grow, 1, 0, v_num - 1);<br>
+</p>
+<p>
+The above code allocates memory to a buffer then copies the data of all vertices from the given vertex buffer into it, returning the index of the new buffer which is stored in the variable "player_buffer", for future use.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Buffers</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="buffer_delete.html">buffer_delete</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+buffer_create_from_vertex_buffer_ext
+--> 

@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>achievement_get_challenges</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">achievement_get_challenges</h1>
+  
+<h2 class="studio">Requests information on current challenges.</h2>
+
+<h3><b>Syntax:</b></h3> 
+<p class="code">achievement_get_challenges()</p>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b> N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function will send a request to the server for information on all current challenges and will trigger a callback <a href="../../../001_Advanced%20Use/More%20About%20Async%20Events/Social.html"> 
+Social Asynchronous Event</a> which contains the <tt>async_load</tt> map populated with the relevant key/value pairs. The <i>id</i> key of this <tt>ds_map</tt> is used to identify the correct 
+callback (there can be more than one trigger function for any given asynchronous event), and will be paired with the <b>constant</b> <tt>achievement_challenge_list_received</tt> as well as a 
+number of other key/value pairs for each challenge. The exact contents of the map are shown below:
+<blockquote>
+	<ol>
+		<li>"<b>id</b>" - For this function it should be <tt>achievement_challenge_list_received</tt><br><br>
+		<li>"<b>numchallenges</b>" - The number of challenges (local and remote) currently available.<br><br>
+		<li>"<b>ChallengeNplayerid</b>" - The player id for the challenge, where "N" is an integer, EG: "Challenge5playerid" is the player id for the fifth challenge in the list.<br><br>
+		<li>"<b>ChallengeNissuerid</b>" - The id of the person that issued the challenge, where "N" is an integer, EG: "Challenge2issuerid" is the issuer id for the second challenge in the list.<br><br>
+		<li>"<b>ChallengeNstate</b>" - The state of the challenge "N", which will have a value of 0 - 3 (as a string) for <i>invalid</i>, <i>pending</i>, <i>completed</i> or <i>declined</i>.<br><br>
+		<li>"<b>ChallengeNmessage</b>" - The text message for challenge "N".<br><br> 
+		<li>"<b>ChallengeNissueddate</b>" - The issue date for challenge "N".<br><br> 
+		<li>"<b>ChallengeNcompleteddate</b>" - The completion date for challenge "N".<br><br> 
+		<li>"<b>ChallengeNtype</b>" - The type of challenge given. Can be one of two constants:<br>
+		<ul>
+			<li><b><tt>achievement_type_score_challenge</tt></b> - A challenge based on the score value.<br>
+			<li><b><tt>achievement_type_achievement_challenge</tt></b> - A challenge based on an achievement.<br>
+		</ul>
+		<li>"<b>ChallengeNidentifier</b>" - The identifying string for the challenge.<br><br> 
+		<li>"<b>ChallengeNscore</b>" - The score tied in with the challenge. 
+	</ol>
+</blockquote>	
+
+<p>
+<i><b>NOTE: </b>This function is for <b>iOS</b> only.</i>
+<br>
+<br>
+
+ <p>
+<br>
+</p>
+   
+<h3 class="studio">Extended Example:</h3>
+<p>
+The following code would probably be called after the player has logged into their game account using <a href="achievement_login.html"><tt>achievement_login</tt></a>:
+<p class="code">
+achievement_get_challenges();
+<p>
+This will send off a request for the current challenge information and generate an asynchronous callback with the special <tt>async_load</tt> ds_map containing the following data:
+<p class="code">
+var ident = ds_map_find_value(async_load, "id");<br>
+if ident == achievement_challenge_list_received<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;var numentries = ds_map_find_value(async_load,"numchallenges"); <br>   
+&nbsp;&nbsp;&nbsp;for(var i = 0; i &lt; numentries; i++;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;player_id[i] = ds_map_find_value(async_load, "Challenge" + string(i)+"playerid");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;issuer_id[i] = ds_map_find_value(async_load, "Challenge" + string(i) +"issuerid"); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state[i] = ds_map_find_value(async_load, "Challenge" + string(i)+"state");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;message[i] = ds_map_find_value(async_load, "Challenge" + string(i)+"message");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date_completed[i] = ds_map_find_value(async_load, "Challenge" + string(i)+"completeddate");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date_issued[i] = ds_map_find_value(async_load, "Challenge" + string(i)+"issueddate");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ach_type[i] = ds_map_find_value(async_load, "Challenge" + string(i)+"type");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ach_ident[i] = ds_map_find_value(async_load, "Challenge" + string(i)+"identifier");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ach_score[i] = ds_map_find_value(async_load, "Challenge" + string(i)+"score");<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code checks the returned <tt>ds_map</tt> in the <b>Social Asynchronous Event</b> and if its "id" matches the constant being checked, it then loops through the map storing all the different values 
+in a number of arrays. This information can then be used, for example, to create your own, personalised, challenge pages in game.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Achievements and Leaderboards</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="achievement_get_pic.html">achievement_get_pic</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!--KEYWORDS
+achievement_get_challenges
+achievement_challenge_list_received
+achievement_type_achievement_challenge
+achievement_type_score_challenge
+-->

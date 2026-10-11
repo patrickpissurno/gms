@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Fonts</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">Fonts</h1>
+
+<h2 class="studio">This section deals with the functions available for fonts.</h2>
+
+<p>
+<i>GameMaker: Studio</i> has a number of functions that can be used to get information about the included font assets, as well as a further set of functions that can be used to change, add or remove 
+fonts from your game at run-time. In particular the function <tt>font_add()</tt> can be used to add non-standard fonts, like Asian glyph fonts, in <tt>*.ttf</tt> format.
+
+<p>
+It is worth noting is that if you add a font to your game that doesn't have the glyphs required by the text you wish to write, then the unicode character 9647 (&#9647;) is used to substitute those missing glyphs when rendering it in the draw event. So if your font doesn't have, for example, the &deg; symbol, then writing 90&deg; will actually produce 90&#9647;.
+<br>
+<br>
+
+<h3 class="studio">Font Information</h3>
+<p>
+The following functions can be used to get information about font resources:
+<blockquote>
+<ol>
+	<li><a href="font_get_name.html">font_get_name</a><br>
+	<li><a href="font_get_fontname.html">font_get_fontname</a><br>
+	<li><a href="font_get_first.html">font_get_first</a><br>
+	<li><a href="font_get_last.html">font_get_last</a><br>
+	<li><a href="font_get_italic.html">font_get_italic</a><br>
+	<li><a href="font_get_bold.html">font_get_bold</a><br>
+	<li><a href="font_get_size.html">font_get_size</a><br>
+	<li><a href="font_get_texture.html">font_get_texture</a><br>
+	<li><a href="font_get_uvs.html">font_get_uvs</a><br>
+</ol>
+</blockquote>
+
+<h3 class="studio">Font Manipulation</h3>
+<p>
+The following functions can be used to change and manipulate fonts during a game:
+<blockquote>
+<ol>
+	<li><a href="font_set_cache_size.html">font_set_cache_size</a><br>
+	<li><a href="font_exists.html">font_exists</a><br>
+	<li><a href="font_add.html">font_add<br></a>
+	<li><a href="font_add_sprite.html">font_add_sprite<br></a>
+	<li><a href="font_add_sprite_ext.html">font_add_sprite_ext<br></a>
+	<li><a href="font_replace.html">font_replace<br></a>
+	<li><a href="font_replace_sprite.html">font_replace_sprite<br></a>
+	<li><a href="font_replace_sprite_ext.html">font_replace_sprite_ext<br></a>
+	<li><a href="font_delete.html">font_delete<br></a>
+</ol>
+</blockquote>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="../index.html">Game Assets</a>
+	</div>
+	<!--<div style="float:right">
+		Next: <a href="Setting_Up_GM.html">  </a>
+	</div>-->
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+-->

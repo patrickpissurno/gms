@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>shader_set</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">shader_set</h1>
+
+<h2 class="studio">Set a shader to be used for all further drawing.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">shader_set(shader);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+		
+		<tr><td>shader</td>
+		<td>The index of the shader to use.</td></tr>
+
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+With this function you can set the drawing target to the given shader and all further drawing will be done using that. You can end shader use with function 
+<a href="shader_reset.html"><tt>shader_reset</tt></a>.
+<br>
+<br>
+
+<i><b>NOTE: </b>You can only call a shader in the <b>Draw Event</b> of an instance.</i>
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+shader_set(shader_Glass);<br>
+draw_self();<br>
+shader_reset();<br>
+</p>
+<p>
+The above code will set a shader top be used for drawing, then draw the current sprite used for the instance using it.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Shaders</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="shader_get_uniform.html">shader_get_uniform</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+shader_set
+-->

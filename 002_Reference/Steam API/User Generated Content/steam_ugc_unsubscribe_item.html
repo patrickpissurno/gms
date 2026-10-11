@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>steam_ugc_unsubscribe_item</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">steam_ugc_unsubscribe_item</h1>
+  
+<h2 class="studio">Unsubscribe from a given UGC item.</h2>
+  
+<h3 class="studio">Syntax:</h3>
+<p class="code">steam_ugc_unsubscribe_item(published_file_id);
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+
+		<tr><td>published_file_id </td>
+		<td>The unique file ID for the UGC to unsubscribe from.</td></tr>
+		
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns:</b> Async ID
+</p>
+  
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function can be used to unsubscribe from a UGC item. You supply the published file ID and then the function returns a unique async ID value which can be used to check that the item has been unsubscribed 
+correctly in the Steam Async event. This event will have the <tt>async_load</tt> DS map which will be populated with the following key/value pairs:
+<blockquote>
+	<ol>
+		<li>"<b>id</b>" - The async ID returned by the function that triggered the event</li><br>
+
+		<li>"<b>result</b>" - The result of the operation (a real value). This will either be the GML constant <tt>ugc_result_success</tt> or some other real number. So you should check for this constant 
+		to ensure that the call was successful, and if otherwise somthing has not worked correctly. The rest of the possible values returned are shown as the result of the Steam "EResult" value  and you 
+		should see <tt>steamclientpublic.h</tt> in the SDK headers for all 89 possible values.</li><br>
+
+		<li>"<b>event_type</b>" - The string "<b>ugc_unsubscribe_item</b>".</li><br>
+		
+		<li>"<b>published_file_id</b>" - The unique ID for the published item.</li>
+
+	</ol>
+</blockquote>
+<p>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+steam_sub = steam_ugc_subscribe_item(global.pubFileID);
+</p>
+<p>
+The above code will subscribe (and download) the item with the file ID stored in the global variable "pubFileID".
+<p>
+
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Steam API - User Generated Content</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="steam_ugc_num_subscribed_items.html">steam_ugc_num_subscribed_items</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+steam_ugc_unsubscribe_item
+-->

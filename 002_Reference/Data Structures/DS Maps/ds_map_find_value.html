@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>ds_map_find_value</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">ds_map_find_value</h1>
+  
+<h2 class="studio">Finds the key specified and returns the paired value from the ds_map.</h2>
+  
+<h3><b>Syntax:</b> </h3>
+<p class="code">ds_map_find_value(id, key)<p>
+
+<p>
+<br>
+</p>
+  
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+	
+	<tr><td>id</td>
+	<td>The id of the map to use.</td></tr>
+	
+	<tr class="alt"><td>key</td>
+	<td>The key to find.</td></tr>
+</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p><b>Returns:</b> Real, string or undefined</p>
+  
+<p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+With this function you can get the value from a specified key. The input values of the function are the (previously created) ds_map to use and the key to check for.
+<br>
+<br>
+
+<i><b>NOTE: </b>If no such key exists then the function will return <tt>&lt;undefined&gt;</tt>. You should always check this using the 
+<a href="../../001_GML%20Language%20Overview/is_undefined.html"><tt>is_undefined()</tt></a> function.</i>
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+amount = ds_map_find_value(inventory, "food");
+</p>
+<p>
+Or, using the map accessor "?":
+<p class="code">
+amount = inventory[? "food"];
+</p>
+<p>
+The above code will get the value of the key "food" and store it in the variable "amount".<br>
+<br>
+</p>
+  
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">DS Maps</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="ds_map_read.html">ds_map_read</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+</body>
+</html>
+
+<!--KEYWORDS
+ds_map_find_value
+-->

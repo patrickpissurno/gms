@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>variable_instance_set</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">variable_instance_set</h1>
+  
+<h2 class="studio">Set the value of a given instance variable</h2>
+  
+<h3><b>Syntax:</b></h3>
+<p class="code">variable_instance_set(instance_id, name, val);</p>
+  
+<p>
+<br>
+</p>
+  
+<div class="param">
+<table>
+
+		<tr><th>Argument</th><th>Description</th></tr>
+
+		<tr><td>instance_id</td>
+		<td>The unique ID value of the instance to use</td></tr>
+		
+		<tr class="alt"><td>name</td>
+		<td>The name of the variable to set (as a string)</td></tr>
+		
+		<tr><td>val</td>
+		<td>The value to set the variable to</td></tr>	
+	
+</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p><b>Returns: </b>N/A</p>
+  
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+	With this function you can set the value of a given named variable. You supply the unique instance ID value (which can be found from the room editor, or is returned when you call the function <tt>instance_create</tt>) as well as the name of the variable to get the value of <i>as a string</i> (see example code below). If the variable does not exist already in the instance it will be created and then assigned the value.
+
+<p>
+<br>
+</p>
+
+<h3><b>Example:</b></h3>
+<p class="code">
+if !variable_instance_exists(id, "shields")<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;variable_instance_set(id, "shields", 0);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+	The above code will check to see if an instance variable exists in the calling instance and if it does not then it is created and set to 0.
+</p>
+  
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Variables And Variable Scope</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="variable_global_exists.html">variable_global_exists</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+variable_instance_set
+-->

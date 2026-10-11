@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>draw_skeleton_collision</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">draw_skeleton_collision</h1>
+
+<h2 class="studio">Draws the collision masks for a given frame of a skeletal animation with transforms.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">draw_skeleton_collision(sprite, animname, frame, x, y, xscale, yscale, rot, colour) </p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+		
+		<tr><td>sprite</td>
+		<td>The index of the sprite to draw.</td></tr>
+
+		<tr class="alt"><td>animname</td>
+		<td>The name of the animation to get the frame from (a string).</td></tr>
+		
+		<tr><td>frame</td>
+		<td>The animation frame to draw (from 0 to image_number - 1).</td></tr>
+		
+		<tr class="alt"><td>x</td>
+		<td>The x coordinate of where to draw the sprite.</td></tr>
+		
+		<tr><td>y</td>
+		<td>The y coordinate of where to draw the sprite.</td></tr>
+		
+		<tr class="alt"><td>xscale</td>
+		<td>The horizontal scaling of the sprite, as a multiplier: 1 = normal scaling, 0.5 is half etc...</td></tr>
+		
+		<tr><td>yscale</td>
+		<td>The vertical scaling of the sprite, as a multiplier: 1 = normal scaling, 0.5 is half etc...</td></tr>
+		
+		<tr class="alt"><td>rot</td>
+		<td>The rotation of the sprite. 0=normal, 90=turned 90 degrees counter-clockwise etc.</td></tr>
+		
+		<tr><td>colour</td>
+		<td>The colour with which to blend the sprite.</td></tr>
+		
+	</table>
+</div>
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function will draw the collision masks associated with the given skeletal animation. You supply the base sprite, the animation set to use and the frame to get the information from, and you can also set the 
+transform properties to suit.
+<blockquote>
+<i><b>IMPORTANT: </b>Spine integration in GameMaker: Studio is a Pro licence feature and will not work in the Free/Standard versions.</i>
+</blockquote>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+draw_skeleton_collision(sprite_index, "jump", image_index, x, y, image_xscale, image_yscale, image_angle, c_white);
+</p>
+<p>
+The above code will draw the collision mask data for the current sprite, using the current transforms, for the animation set "jump".
+</p>
+  
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Drawing Sprites And Backgrounds</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="draw_skeleton_time.html">draw_skeleton_time</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+draw_skeleton_collision
+-->

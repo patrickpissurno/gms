@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>steam_ugc_download</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">steam_ugc_download</h1>
+  
+<h2 class="studio">Download a preview image of a given UGC item.</h2>
+  
+<h3 class="studio">Syntax:</h3>
+<p class="code">steam_ugc_download(ugc_handle, dest_filename);
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+
+		<tr><td>ugc_handle</td>
+		<td>The unique handle for the preview to be downloaded.</td></tr>
+		
+		<tr class="alt"><td>dest_filename</td>
+		<td>The file name to save the preview with.</td></tr>
+
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns:</b> Async ID
+</p>
+  
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+With this function you can download a preview image for any given UGC item. The <tt>ugc_handle</tt> is the unique identifying value for the image (which you can get using the function 
+<a href="steam_ugc_send_query.html"><tt>steam_ugc_send_query()</tt></a>), and the destination filename is the name (and local path within the Steam sandbox) that you wish to give the 
+image file when the download is complete.
+<br>
+<br>
+
+When using this function it will trigger an <a href="../../../001_Advanced%20Use/More%20About%20Async%20Events/Steam.html">Steam Asynchronous</a> event to report the details of the image file requested 
+containing the following key/value pairs in the <tt>async_load</tt> ds_map:
+<blockquote>
+	<ol>
+		<li>"<b>id</b>" - The async ID returned by the calling function</li><br>
+
+		<li>"<b>result</b>" - The result of the operation (a real value). This will either be the GML constant <tt>ugc_result_success</tt> or some other real number. So you should check for this constant 
+		to ensure that the call was successful, and if otherwise somthing has not worked correctly. The rest of the possible values returned are shown as the result of the Steam "EResult" value  and you 
+		should see <tt>steamclientpublic.h</tt> in the SDK headers for all 89 possible values.</li><br>
+
+		<li>"<b>event_type</b>" -  This key will hold the value "<b>ugc_download</b>"</li><br>
+
+		<li>"<b>original_filename</b>" -  This key holds the original name of the image file <i>on the server</i> (a string)</li><br>
+
+		<li>"<b>dest_filename</b>" - This key holds the image file name you passed in (a string)</li><br>
+
+		<li>"<b>ugc_handle</b>" - This key holds the <tt>ugc_handle</tt> value that you passed in to the calling function</li>
+	</ol>
+</blockquote>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Extended Example:</h3>
+<p>
+In this example we first call the function and store the async ID value in a variable:
+<p class="code">
+steam_get = steam_ugc_download(steam_handle, "\UGC\Preview_file.png");<br>
+</p>
+<p>
+This would then send off a file request to the Steam API, generating an async event which we would deal with as follows:
+<p class="code">
+var event_id = async_load[? "id"];<br>
+if event_id == steam_get<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;var type = async_load[? "event_type"];<br>
+&nbsp;&nbsp;&nbsp;if type ==  "ugc_download"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sprite_delete(preview_sprite);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;preview_sprite = sprite_add(async_load[? "dest_filename"], 0, false, false, 0, 0);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code checks the event type and then creates a sprite from the downloaded image.
+<p>
+
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Steam API - User Generated Content</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="steam_ugc_create_item.html">steam_ugc_create_item</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+steam_ugc_download
+-->

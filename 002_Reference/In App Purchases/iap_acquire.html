@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>iap_acquire</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">iap_acquire</h1>
+  
+<h2 class="studio">This requests acquisition of the given product.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">iap_acquire(purchase_id, payload);</p>
+  
+<p>
+<br>
+</p>
+  
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+
+		<tr><td>purchase_id</td>
+		<td>The product ID string for the purchase.</td></tr>
+
+		<tr class="alt"><td>payload</td>
+		<td>This is a string that can be used for purchase verification on Google Play (use an empty string, "", on all other platforms).</td></tr>
+		
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>Real
+</p>
+  
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function is the one that you use to acquire a purchase through the target store for the device running your game. This product ID string is that which you specify when activating the IAP using 
+<a href="iap_activate.html"><tt>iap_activate</tt></a>, and should be the same as that which you used to identify the product on the target store. This function will return an value as it's "index" so that it 
+can be identified when the purchase data comes through and calling the function will trigger an <a href="../../001_advanced%20use/more%20about%20async%20events/iap.html"><b>IAP Event</b></a> 
+of the "type" <tt><tt>iap_ev_purchase</tt></tt>, which will contain the following additional key:
+<blockquote>
+	<ul>
+		<li>"<b>index</b>" - The purchase ID for the activated product.
+	</ul>
+</blockquote>
+
+<p>
+This purchase ID can then be used to check which purchase has triggered the event (comparing it to the returned index value that you stored), so you can deal with it accordingly. If you are developing for Google Play 
+(on the Android target), then you can also set the "Payload" string. This is used by Google to verify the product and is sent along with the purchase request to Google Play. When a purchase is successfully completed 
+the game will receive the payload used as part of the purchase information. By generating a payload with each purchase you can therefore provide a simple form of purchase verification.
+<br>
+<br>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+if mouse_check_button_pressed(mb_left)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;iap_acquire("noads", "")<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code will send a purchase request when the mouse button is pressed.
+</p>
+<p>
+
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">In App Purchases</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="iap_consume.html">iap_consume</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!--KEYWORDS
+iap_acquire
+iap_ev_purchase
+-->

@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>steam_ugc_set_item_visibility</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">steam_ugc_set_item_visibility</h1>
+  
+<h2 class="studio">Set (or update) the visibility of the given item handle.</h2>
+  
+<h3 class="studio">Syntax:</h3>
+<p class="code">steam_ugc_set_item_visibility(ugc_update_handle, visibility);
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+
+		<tr><td>ugc_update_handle</td>
+		<td>The unique handle for the UGC to be updated.</td></tr>
+		
+		<tr class="alt"><td>visibility</td>
+		<td>The visibility (a constant, listed below) to be used for the item.</td></tr>
+
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns:</b> Boolean
+</p>
+  
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function will set the visibility of the given item, set using one of the following constants:
+
+<div class="compat">
+	<table>
+		<tr><th>Constant</th><th>Description</th></tr>
+		
+		<tr><td>ugc_visibility_public</td><td>Set the item to be publicly visible</td></tr>
+		
+		<tr class="alt"><td>ugc_visibility_friends_only</td><td>Set the item to be visible to only people on the users friends list</td></tr>
+		
+		<tr><td>ugc_visibility_private</td><td>Set the item to be private</td></tr>
+
+	</table>
+</div>
+
+<p>
+<br>
+<br>
+The update handle is the value returned when you called the function <a href="steam_ugc_start_item_update.html"><tt>steam_ugc_start_item_update</tt></a>, and function will return <tt>true</tt> if the 
+API was successfully accessed and <tt>false</tt> if there was an issue.
+<p>
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+var app_id = steam_get_app_id();<br>
+var updateHandle = steam_ugc_start_item_update(app_id, global.Publish_ID);<br>
+steam_ugc_set_item_title(updateHandle, "My workshop item(3)!");<br>
+steam_ugc_set_item_description( updateHandle, "testing workshop...");<br>
+steam_ugc_set_item_visibility(updateHandle, ugc_visibility_public);<br>
+var tagArray;<br>
+tagArray[0] = "Test";<br>
+tagArray[1] = "New";<br>
+steam_ugc_set_item_tags(updateHandle, tagArray);<br>
+steam_ugc_set_item_preview(updateHandle, "promo.jpg");<br>
+steam_ugc_set_item_content(updateHandle, "WorkshopContent1");<br>
+requestId = steam_ugc_submit_item_update(updateHandle, "Version 1.2");<br>
+</p>
+<p>
+The above code gets the game ID, then uses that along with a previously stored published file ID to generate an update handle for the item. This handle is then used to update various pieces of information 
+before the update is pushed to the Workshop servers.
+<p>
+
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Steam API - User Generated Content</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="steam_ugc_set_item_tags.html">steam_ugc_set_item_tags</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+steam_ugc_set_item_visibility
+ugc_visibility_public
+ugc_visibility_friends_only
+ugc_visibility_private
+-->

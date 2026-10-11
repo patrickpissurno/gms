@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>draw_set_colour</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">draw_set_colour</h1>
+
+<h2 class="studio">Sets the base colour for the draw functions.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">draw_set_colour(col);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+	
+	<tr><td>col</td>
+	<td>The colour to set for drawing.</td></tr>
+</table>
+</div>
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+With this function you can set the base draw colour for the game. This value will affect all further drawing where appropriate, including fonts, forms, primitives and 3D. If any of those assets are drawn 
+with their own colour value changed, this value will be ignored.<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+draw_set_alpha(0.5);<br>
+draw_set_colour(c_black);<br>
+draw_text(x+5, y+5, "LEVEL 1");<br>
+draw_set_alpha(1);<br>
+draw_set_colour(c_white);<br>
+draw_text(x, y, "LEVEL 1");<br>
+</p>
+<p>
+The above code will draw some text at the specified position with a shadow effect created by modified draw alpha and colour.
+</p>
+  
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">colour And blending</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="draw_set_colour_write_enable.html">draw_set_colour_write_enable</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+draw_set_colour
+-->

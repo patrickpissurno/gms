@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>physics_particle_set_max_count</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">physics_particle_set_max_count</h1>
+  
+<h2 class="studio">Set the maximum number of particles permitted in a physics simulation.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">physics_particle_set_max_count(count)</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+
+		<tr><td>count</td>
+		<td>The maximum number of particles to permit.</td></tr>
+
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function will set the total permitted number of particles in a physics simulation. If you set this value to 0, then there is no cap the particles created, and setting it to any other value will stop any further 
+particles being created when the total number of particles is equal to the value. Note that the <i>minimum</i> number of particles you can create in a simulation is 128, so setting this value any lower will 
+have no effect (unless set to 0).
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+physics_particle_set_max_count(500);
+</p>
+<p>
+The above code will set the particle cap of the physics simulation to 500.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Soft Body Particles</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="physics_particle_set_radius.html">physics_particle_set_radius</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+physics_particle_set_max_count
+--> 

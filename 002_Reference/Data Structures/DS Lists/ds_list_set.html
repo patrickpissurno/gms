@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>ds_list_set</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">ds_list_set</h1>
+
+<h2 class="studio">Sets a given list position to a value.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">ds_list_set(id, pos, val);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+<table>
+	<tr><th>Argument</th><th>Description</th></tr>
+	
+	<tr><td>id</td>
+	<td>The id of the list to add to.</td></tr>
+	
+	<tr class="alt"><td>pos</td>
+	<td>The position within the list to set.</td></tr>
+	
+	<tr><td>[val2, ... max_val]</td>
+	<td>The value to add to the list.</td></tr>	
+
+</table>
+</div>
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+This function can be used to set a previously added list entry. You give the list ID (as returned when you created the list) and the position within the list to set as well as the value to set it to. Note that if the entry being set is outside the bounds of the list (ie, you set list entry 20 but the current list only contains 10 entries) then the list will be filled to the given position and each entry will be set to 0.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+for (var i = 0; i &lt; ds_list_size(list); i++;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ds_list_set(list, i, -1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+The above code will add the value stored in the "score" variable into the list indexed in the variable "sc_list".
+<p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">DS Lists</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="ds_list_delete.html">ds_list_delete</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!--KEYWORDS
+ds_list_set
+-->

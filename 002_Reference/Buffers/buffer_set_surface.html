@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>buffer_set_surface</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1 class="studio">buffer_set_surface</h1>
+  
+<h2 class="studio">Copy buffer data to a surface.</h2>
+
+<h3 class="studio">Syntax:</h3>
+<p class="code">buffer_set_surface(buffer, surface, mode, offset, modulo);</p>
+
+<p>
+<br>
+</p>
+
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+
+		<tr><td>buffer</td>
+		<td>The index of the buffer to use.</td></tr>
+		
+		<tr class="alt"><td>surface</td>
+		<td>The index of the surface to use.</td></tr>
+		
+		<tr><td>mode</td>
+		<td>The data to get from the buffer (see the list of constants below).</td></tr>
+		
+		<tr class="alt"><td>offset</td>
+		<td>The data offset value.</td></tr>
+
+		<tr><td>modulo</td>
+		<td>The offset from the end of the line to the start of the next</td></tr>
+				
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>N/A
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3 class="studio">Description</h3>
+<p>
+With this function you can write the information from a buffer to a given surface. Both the buffer and the surface must have been created previously. You can choose the copy "mode" for the data being stored 
+which is set by the constants listed below, as well as the offset and modulo values. Both offset and modulo are byte values, with the offset defining the start position within the buffer and 
+modulo being the number of bytes that were left at the end of every line (for storing additional data) when the buffer was written to.
+<br>
+<br>
+
+<div class="compat">
+	<table>
+		<tr><th>Constant</th><th>Description</th></tr>
+		<tr><td>0</td><td>Copies all data from the buffer.</td></tr>
+	</table>
+</div>
+
+<p>
+<i><b>NOTE:</b> This function is currently only available for the <b>Windows</b> and <b>Playstation 4</b> target platforms.</i>
+<br>
+</p>
+
+<h3 class="studio">Example:</h3>
+<p class="code">
+buffer_set_surface(buff, application_surface, 0, 0, 0);
+</p>
+<p>
+The above code will copy all the data stored in the buffer indexed in the variable "buff" to the application surface with no offset or modulo values.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back: <a href="index.html">Buffers</a>
+	</div>
+	<div style="float:right">
+		Next: <a href="buffer_resize.html">buffer_resize</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+buffer_set_surface
+--> 

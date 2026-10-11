@@ -357,7 +357,17 @@ async function main() {
   for (const file of filesToRename) {
     const normName = normalizeSegment(file.name);
     const newPath = path.join(file.dir, normName);
-    fs.renameSync(file.fullPath, newPath);
+    try {
+      fs.renameSync(file.fullPath, newPath);
+    } catch (err: any) {
+      if (err.code === "EEXIST" || err.code === "ENOTEMPTY") {
+        const tmpPath = `${file.fullPath}__tmp_${Date.now()}`;
+        fs.renameSync(file.fullPath, tmpPath);
+        fs.renameSync(tmpPath, newPath);
+      } else {
+        throw err;
+      }
+    }
     filesRenamed++;
   }
   console.log(`   Renamed ${filesRenamed} files.`);
@@ -370,7 +380,17 @@ async function main() {
     const normName = normalizeSegment(dir.name);
     if (dir.name !== normName) {
       const newPath = path.join(dir.parentDir, normName);
-      fs.renameSync(dir.fullPath, newPath);
+      try {
+        fs.renameSync(dir.fullPath, newPath);
+      } catch (err: any) {
+        if (err.code === "ENOTEMPTY" || err.code === "EEXIST") {
+          const tmpPath = `${dir.fullPath}__tmp_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`;
+          fs.renameSync(dir.fullPath, tmpPath);
+          fs.renameSync(tmpPath, newPath);
+        } else {
+          throw err;
+        }
+      }
       dirsRenamed++;
     }
   }
